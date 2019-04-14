@@ -37,9 +37,9 @@ python server/webserver.py
 ```
 
 ### REST interface
-In order to guarantee independence of programming languages, all output can be accessed by calling URL endpoints. Spectrograms and predictions are supplied in two versions:  
-* Live: Returns the most current computations.
-* Queued: Returns the last not yet consumed predictions and spectrograms. 
+In order to guarantee independence of programming languages, all output can be accessed by calling URL endpoints. 
+
+
 
 #### Get current spectrogram
 |  |  |
@@ -58,13 +58,6 @@ Example output:
   <img src="img/specInBrowser.png" width="500" title="Spectrogram called via browser">
 </p>
 
-#### Get spectrogram from queue
-|  |  |
-| ----------- | --------- |
-| Http-Method | ```GET``` |    
-| Response Content-Type | ```JPEG``` |   
-| URL |```http://127.0.0.1:5000/queued_spec``` |
-| Return | a JPEG from the last not yet consumed spectrogram |
 #### Get current prediction
 |  |  |
 | ----------- | --------- |
@@ -76,19 +69,8 @@ Example output:
 Example response: ```[["Acoustic_guitar", 0.0006955251446925104, 0], ["Applause", 0.0032770668622106314, 1], ...]```   
 ```1. element```: category name  
 ```2. element```: probability of prediction for this class
-```3. element```: positional argument (can be used to if special order of displayed classes is desired)  
-#### Get prediction from queue
-|  |  |
-| ----------- | --------- |
-| Http-Method | ```GET``` |    
-| Response Content-Type | ```JSON``` |   
-| URL |```http://127.0.0.1:5000/queued_pred``` |
-| Return | 2D array of the last not yet consumed class probabilities with respect to the currently selected predictor |  
+```3. element```: positional argument (can be used to if special order of displayed classes is desired)   
 
-Example response: ```[["Acoustic_guitar", 0.0006955251446925104, 0], ["Applause", 0.0032770668622106314, 1], ...]```   
-```1. element```: category name
-```2. element```: probability of prediction for this class
-```3. element```: positional argument (can be used to if special order of displayed classes is desired)
 #### Get available audio files
 |  |  |
 | ----------- | --------- |
