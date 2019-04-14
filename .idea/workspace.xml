@@ -1,0 +1,1101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9015c207-3912-40b0-9892-7d06d89d8353" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/DI_Python$audioTaggerThreaded.coverage" NAME="audioTaggerThreaded Coverage Results" MODIFIED="1553172285505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DI_Python$mainApp.coverage" NAME="mainApp Coverage Results" MODIFIED="1553326345520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/guiprovider" />
+    <SUITE FILE_PATH="coverage/DI_Python$AudioTagger.coverage" NAME="AudioTagger Coverage Results" MODIFIED="1553109154229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/audiotaggermodel" />
+    <SUITE FILE_PATH="coverage/DI_Python$Host.coverage" NAME="Host Coverage Results" MODIFIED="1553281180497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DI_Python$audiotaggermodel.coverage" NAME="audiotaggermodel Coverage Results" MODIFIED="1553693898950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
+    <SUITE FILE_PATH="coverage/DI_Python$startup.coverage" NAME="startup Coverage Results" MODIFIED="1554320467324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DI_Python$kivyGUI.coverage" NAME="kivyGUI Coverage Results" MODIFIED="1552679377109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DI_Python$main.coverage" NAME="main Coverage Results" MODIFIED="1553121365611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AEC_AudioTaggerGUI$webserver.coverage" NAME="webserver Coverage Results" MODIFIED="1554984438220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+    <SUITE FILE_PATH="coverage/DI_Python$webserver.coverage" NAME="webserver Coverage Results" MODIFIED="1553950057113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+    <SUITE FILE_PATH="coverage/AEC_AudioTaggerGUI$startup.coverage" NAME="startup Coverage Results" MODIFIED="1554928306198" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DI_Python$kivyApp.coverage" NAME="kivyApp Coverage Results" MODIFIED="1553281189906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/guiprovider" />
+    <SUITE FILE_PATH="coverage/DI_Python$audio_tagger.coverage" NAME="audio_tagger Coverage Results" MODIFIED="1553110284212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/spectrogramprovider" />
+    <SUITE FILE_PATH="coverage/DI_Python$MockPictureProvider.coverage" NAME="MockPictureProvider Coverage Results" MODIFIED="1553112498160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/spectrogramprovider" />
+    <SUITE FILE_PATH="coverage/DI_Python$MockSpectrogramProvider.coverage" NAME="MockSpectrogramProvider Coverage Results" MODIFIED="1552856601607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/config/config.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/viewer/startup.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/config/load_config.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="57" lean-forward="true" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/dcase_predictor_provider.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="60" column="66" lean-forward="true" selection-start-line="60" selection-start-column="66" selection-end-line="60" selection-end-column="66" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/producer/signal_provider.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="91" column="43" lean-forward="true" selection-start-line="91" selection-start-column="43" selection-end-line="91" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/webserver.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-480">
+              <caret line="25" column="34" lean-forward="true" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/audio_tagger_model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/spectrogram/madmom_spectrogram_provider.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="31" column="62" lean-forward="true" selection-start-line="31" selection-start-column="62" selection-end-line="31" selection-end-column="62" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>app</find>
+      <find>print</find>
+      <find>id</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/guiprovider/mainApp.py" />
+        <option value="$PROJECT_DIR$/guiprovider/kv/main.kv" />
+        <option value="$PROJECT_DIR$/controller/IController.py" />
+        <option value="$PROJECT_DIR$/controller/controller.py" />
+        <option value="$PROJECT_DIR$/model/test.py" />
+        <option value="$PROJECT_DIR$/startup.py" />
+        <option value="$PROJECT_DIR$/model/predictor/IPredictor.py" />
+        <option value="$PROJECT_DIR$/model/spectrogram/ISpectrogram.py" />
+        <option value="$PROJECT_DIR$/model/predictor/DCASEPredictor.py" />
+        <option value="$PROJECT_DIR$/model/audiotaggermodel.py" />
+        <option value="$PROJECT_DIR$/model/predictor/dcasePredictor.py" />
+        <option value="$PROJECT_DIR$/model/spectrogram/spectrogramProvider.py" />
+        <option value="$PROJECT_DIR$/model/audioTaggerServer.py" />
+        <option value="$PROJECT_DIR$/server/predictor/dcasePredictor.py" />
+        <option value="$PROJECT_DIR$/server/predictor/predictors.csv" />
+        <option value="$PROJECT_DIR$/server/predictor/baseline_net.py" />
+        <option value="$PROJECT_DIR$/server/predictor/dcasePredictorProvider.py" />
+        <option value="$PROJECT_DIR$/server/threads/processingThreads.py" />
+        <option value="$PROJECT_DIR$/server/config/loadConig.py" />
+        <option value="$PROJECT_DIR$/server/spectrogram/prepare_spectrograms.py" />
+        <option value="$PROJECT_DIR$/server/predictor/testpredictor/TestProvider.py" />
+        <option value="$PROJECT_DIR$/server/startup.py" />
+        <option value="$PROJECT_DIR$/viewer/kv/main.kv" />
+        <option value="$PROJECT_DIR$/server/config/loadConfig.py" />
+        <option value="$PROJECT_DIR$/viewer/mainApp.py" />
+        <option value="$PROJECT_DIR$/server/predictor/IPredictor.py" />
+        <option value="$PROJECT_DIR$/server/predictor/testpredictor/TestPredictorProvider.py" />
+        <option value="$PROJECT_DIR$/server/predictor/dcasepredictorprovider/DcasePredictorProvider.py" />
+        <option value="$PROJECT_DIR$/server/predictor/examplepredictor/DummyPredictor.py" />
+        <option value="$PROJECT_DIR$/server/spectrogram/madmomSpectrogramProvider.py" />
+        <option value="$PROJECT_DIR$/server/audioTaggerModel.py" />
+        <option value="$PROJECT_DIR$/setup.py" />
+        <option value="$PROJECT_DIR$/server/predictor/test_predictor/test_predictor_provider.py" />
+        <option value="$PROJECT_DIR$/server/config/predictors.csv" />
+        <option value="$PROJECT_DIR$/server/predictor/dcase_predictor_provider/dcase_predictor_provider.py" />
+        <option value="$PROJECT_DIR$/viewer/main_app.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/server/config/sources.csv" />
+        <option value="$PROJECT_DIR$/server/webserver.py" />
+        <option value="$PROJECT_DIR$/server/consumer/predictors/example_predictor/dummy_predictor.py" />
+        <option value="$PROJECT_DIR$/server/consumer/predictors/test_predictor/test_predictor_provider.py" />
+        <option value="$PROJECT_DIR$/server/config/config.txt" />
+        <option value="$PROJECT_DIR$/server/consumer/visualizers/i_visualizer.py" />
+        <option value="$PROJECT_DIR$/server/consumer/predictors/i_predictor.py" />
+        <option value="$PROJECT_DIR$/server/config/load_config.py" />
+        <option value="$PROJECT_DIR$/server/producer/signal_provider.py" />
+        <option value="$PROJECT_DIR$/server/consumer/visualizers/spectrogram/madmom_spectrogram_provider.py" />
+        <option value="$PROJECT_DIR$/server/config/config.py" />
+        <option value="$PROJECT_DIR$/server/audio_tagger_model.py" />
+        <option value="$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/dcase_predictor_provider.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="67" />
+    <option name="y" value="25" />
+    <option name="width" value="927" />
+    <option name="height" value="1055" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="AEC_AudioTaggerGUI_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AEC_AudioTaggerGUI_v2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AEC_AudioTaggerGUI_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AEC_AudioTaggerGUI_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AEC_AudioTaggerGUI_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AEC_AudioTaggerGUI_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AEC_AudioTaggerGUI_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AEC_AudioTaggerGUI_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="visualizers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AEC_AudioTaggerGUI_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AEC_AudioTaggerGUI_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="visualizers" type="462c0819:PsiDirectoryNode" />
+              <item name="spectrogram" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AEC_AudioTaggerGUI_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AEC_AudioTaggerGUI_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="producer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AEC_AudioTaggerGUI_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AEC_AudioTaggerGUI_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="viewer" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/viewer/app" />
+      <recent name="$PROJECT_DIR$/viewer" />
+      <recent name="$PROJECT_DIR$/server/predictor/dcasepredictorprovider" />
+      <recent name="$PROJECT_DIR$/server/files" />
+      <recent name="$PROJECT_DIR$/archive" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/img" />
+      <recent name="$PROJECT_DIR$/server/files" />
+      <recent name="$PROJECT_DIR$/server" />
+      <recent name="$PROJECT_DIR$/server/predictor" />
+      <recent name="$PROJECT_DIR$/model" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.startup">
+    <configuration name="AudioTagger" type="PythonConfigurationType" factoryName="Python">
+      <module name="DI_Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python2.7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/audiotaggermodel" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/audiotaggermodel/AudioTaggerModel.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Host" type="PythonConfigurationType" factoryName="Python">
+      <module name="DI_Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python2.7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/archive/startup.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="true" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="DI_Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="audiotaggermodel" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="DI_Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model/audioTaggerModel.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="kivyGUI" type="PythonConfigurationType" factoryName="Python">
+      <module name="DI_Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python2.7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gui/kivyApp.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="mainApp (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="DI_Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/viewer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/viewer/app/main_app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="setup" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="DI_Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/setup.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="startup" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="DI_Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/viewer/startup.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="webserver" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="DI_Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/server" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server/webserver.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.AudioTagger" />
+      <item itemvalue="Python.Host" />
+      <item itemvalue="Python.kivyGUI" />
+      <item itemvalue="Python.audiotaggermodel" />
+      <item itemvalue="Python.mainApp (1)" />
+      <item itemvalue="Python.startup" />
+      <item itemvalue="Python.webserver" />
+      <item itemvalue="Python.setup" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.startup" />
+        <item itemvalue="Python.webserver" />
+        <item itemvalue="Python.setup" />
+        <item itemvalue="Python.audiotaggermodel" />
+        <item itemvalue="Python.mainApp (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9015c207-3912-40b0-9892-7d06d89d8353" name="Default Changelist" comment="" />
+      <created>1552675556056</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1552675556056</updated>
+      <workItem from="1552675560067" duration="6561000" />
+      <workItem from="1552826382706" duration="9547000" />
+      <workItem from="1552854148719" duration="538000" />
+      <workItem from="1552855509532" duration="3510000" />
+      <workItem from="1552993408927" duration="18455000" />
+      <workItem from="1553102938970" duration="13964000" />
+      <workItem from="1553118812217" duration="2679000" />
+      <workItem from="1553145863406" duration="905000" />
+      <workItem from="1553147432102" duration="1669000" />
+      <workItem from="1553164108686" duration="11099000" />
+      <workItem from="1553184543289" duration="175000" />
+      <workItem from="1553204688585" duration="2389000" />
+      <workItem from="1553207885929" duration="1090000" />
+      <workItem from="1553244012576" duration="80000" />
+      <workItem from="1553244610377" duration="8188000" />
+      <workItem from="1553278976881" duration="4205000" />
+      <workItem from="1553285474951" duration="1720000" />
+      <workItem from="1553326143253" duration="7357000" />
+      <workItem from="1553423377692" duration="26008000" />
+      <workItem from="1553592067138" duration="10313000" />
+      <workItem from="1553633252276" duration="25592000" />
+      <workItem from="1553844251838" duration="9999000" />
+      <workItem from="1553948771403" duration="5944000" />
+      <workItem from="1554025631315" duration="6298000" />
+      <workItem from="1554301200644" duration="21115000" />
+      <workItem from="1554378652767" duration="3336000" />
+      <workItem from="1554381996744" duration="2150000" />
+      <workItem from="1554384246975" duration="2400000" />
+      <workItem from="1554456279196" duration="9000" />
+      <workItem from="1554456334854" duration="1830000" />
+      <workItem from="1554459504010" duration="615000" />
+      <workItem from="1554460600881" duration="782000" />
+      <workItem from="1554814312344" duration="10219000" />
+      <workItem from="1554839955094" duration="4573000" />
+      <workItem from="1554883403252" duration="21042000" />
+      <workItem from="1554917683489" duration="1450000" />
+      <workItem from="1554919712681" duration="11603000" />
+      <workItem from="1554963851998" duration="20470000" />
+      <workItem from="1554994815758" duration="27000" />
+      <workItem from="1554996614638" duration="1184000" />
+      <workItem from="1555048407850" duration="279000" />
+      <workItem from="1555176738460" duration="1044000" />
+      <workItem from="1555177965470" duration="1598000" />
+      <workItem from="1555179783168" duration="981000" />
+      <workItem from="1555180976232" duration="1478000" />
+      <workItem from="1555182563376" duration="6897000" />
+      <workItem from="1555198355632" duration="4438000" />
+      <workItem from="1555219036111" duration="640000" />
+      <workItem from="1555219780403" duration="107000" />
+      <workItem from="1555252847635" duration="4174000" />
+      <workItem from="1555263222445" duration="10619000" />
+    </task>
+    <task id="LOCAL-00001" summary="Added controller class, instantiate mvc components in startup">
+      <created>1553337402631</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1553337402631</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added webserver functionality, WebAPI REST Services">
+      <created>1553954605682</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1553954605682</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added two API endpoints (get available predictors and sources)">
+      <created>1554031589043</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1554031589043</updated>
+    </task>
+    <task id="LOCAL-00004" summary="changed GUI, added post control to Backend">
+      <created>1554322657744</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1554322657744</updated>
+    </task>
+    <task id="LOCAL-00005" summary="added working predictor, stop threads appropriately">
+      <created>1554888715229</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1554888715229</updated>
+    </task>
+    <task id="LOCAL-00006" summary="code refactoring, removed unused modules/directories">
+      <created>1554923826690</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1554923826690</updated>
+    </task>
+    <task id="LOCAL-00007" summary="GUI changes: display class probability issue fixed&#10;&#10;The GUI now accepts predictors with less than 5 classes too.">
+      <created>1554928814099</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1554928814099</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added sample predictor, primarily code refactoring">
+      <created>1554978713929</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1554978713929</updated>
+    </task>
+    <task id="LOCAL-00009" summary="changed spec browser picture (removed black borders)">
+      <created>1554979131085</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1554979131085</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added 2 sample gui screenshots">
+      <created>1554979978561</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1554979978561</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added third sample gui screenshot with changed source and predictor selection">
+      <created>1554980216621</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1554980216621</updated>
+    </task>
+    <task id="LOCAL-00012" summary="refactored module names due to broken naming conventions, added setup.py">
+      <created>1554985568092</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1554985568092</updated>
+    </task>
+    <task id="LOCAL-00013" summary="added requirements.txt">
+      <created>1554997029814</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1554997029814</updated>
+    </task>
+    <task id="LOCAL-00014" summary="synchronized threads via barriers">
+      <created>1555201792480</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1555201792480</updated>
+    </task>
+    <task id="LOCAL-00015" summary="outsourced barrier logic into run function in thread">
+      <created>1555202755314</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1555202755314</updated>
+    </task>
+    <task id="LOCAL-00016" summary="added config file, removed registerModel() function, added base class for consumers (Ivisualizer, IPredictor), refactoring">
+      <created>1555255968258</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1555255968258</updated>
+    </task>
+    <task id="LOCAL-00017" summary="added sleep to spectrogram thread">
+      <created>1555281566126</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1555281566126</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="313345000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17376868" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32810867" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3092999" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.48056155" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32721382" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32721382" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32829374" />
+      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.2526998" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.3291536" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32993197" />
+      <window_info anchor="right" id="SciView" order="4" />
+      <window_info anchor="right" x="0" y="0" width="413" height="884" id="Documentation" order="5" side_tool="true" weight="0.2432283" />
+      <window_info anchor="right" id="R Graphics" order="6" />
+      <window_info anchor="right" id="R Packages" order="7" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19701162" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32810867" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3092999" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.29805616" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32721382" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32721382" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32829374" />
+      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.2526998" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.3291536" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32993197" />
+      <window_info anchor="right" id="SciView" order="4" />
+      <window_info anchor="right" x="0" y="0" width="413" height="884" id="Documentation" order="5" side_tool="true" weight="0.2432283" />
+      <window_info anchor="right" id="R Graphics" order="6" />
+      <window_info anchor="right" id="R Packages" order="7" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added controller class, instantiate mvc components in startup" />
+    <MESSAGE value="Added webserver functionality, WebAPI REST Services" />
+    <MESSAGE value="Added two API endpoints (get available predictors and sources)" />
+    <MESSAGE value="changed GUI, added post control to Backend" />
+    <MESSAGE value="added working predictor, stop threads appropriately" />
+    <MESSAGE value="code refactoring, removed unused modules/directories" />
+    <MESSAGE value="GUI changes: display class probability issue fixed&#10;&#10;The GUI now accepts predictors with less than 5 classes too." />
+    <MESSAGE value="added sample predictor, primarily code refactoring" />
+    <MESSAGE value="changed spec browser picture (removed black borders)" />
+    <MESSAGE value="added 2 sample gui screenshots" />
+    <MESSAGE value="added third sample gui screenshot with changed source and predictor selection" />
+    <MESSAGE value="refactored module names due to broken naming conventions, added setup.py" />
+    <MESSAGE value="added requirements.txt" />
+    <MESSAGE value="synchronized threads via barriers" />
+    <MESSAGE value="outsourced barrier logic into run function in thread" />
+    <MESSAGE value="added config file, removed registerModel() function, added base class for consumers (Ivisualizer, IPredictor), refactoring" />
+    <MESSAGE value="added sleep to spectrogram thread" />
+    <option name="LAST_COMMIT_MESSAGE" value="added sleep to spectrogram thread" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/spectrogram/madmom_spectrogram_provider.py</url>
+          <line>82</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/producer/signal_provider.py</url>
+          <line>61</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/producer/signal_provider.py</url>
+          <line>84</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/AEC_AudioTaggerGUI_v2$webserver.coverage" NAME="webserver Coverage Results" MODIFIED="1555270639322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+    <SUITE FILE_PATH="coverage/AEC_AudioTaggerGUI$startup.coverage" NAME="startup Coverage Results" MODIFIED="1555191138468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AEC_AudioTaggerGUI$webserver.coverage" NAME="webserver Coverage Results" MODIFIED="1555253768179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>frame</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/viewer/utils/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" lean-forward="true" selection-start-column="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.conda/envs/kinderuni3/lib/python3.6/site-packages/torch/serialization.py" />
+    <entry file="file://$PROJECT_DIR$/server/IModel.py" />
+    <entry file="file://$PROJECT_DIR$/viewer/utils/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda2/envs/aec/lib/python3.6/socketserver.py" />
+    <entry file="file://$USER_HOME$/anaconda2/envs/aec/lib/python3.6/socket.py" />
+    <entry file="file://$PROJECT_DIR$/server/threads/processingThreads.py" />
+    <entry file="file://$PROJECT_DIR$/server/predictor/dcase_predictor_provider/baseline_net.pt" />
+    <entry file="file://$PROJECT_DIR$/server/predictor/dcase_predictor_provider/baseline_net.py" />
+    <entry file="file://$PROJECT_DIR$/viewer/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda2/envs/aec/lib/python3.6/urllib/request.py" />
+    <entry file="file://$USER_HOME$/anaconda2/envs/aec/lib/python3.6/site-packages/flask/wrappers.py" />
+    <entry file="file://$USER_HOME$/anaconda2/envs/aec/lib/python3.6/site-packages/flask/app.py" />
+    <entry file="file://$USER_HOME$/anaconda2/envs/aec/lib/python3.6/site-packages/flask/globals.py" />
+    <entry file="file://$USER_HOME$/anaconda2/envs/aec/lib/python3.6/site-packages/werkzeug/local.py" />
+    <entry file="file://$USER_HOME$/anaconda2/envs/aec/lib/python3.6/threading.py" />
+    <entry file="file://$PROJECT_DIR$/server/startup.py" />
+    <entry file="file://$PROJECT_DIR$/server/test.py" />
+    <entry file="file://$PROJECT_DIR$/viewer/IViewer.py" />
+    <entry file="file://$PROJECT_DIR$/viewer/kv/main.kv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/spectrogram/prepare_spectrograms.py" />
+    <entry file="file://$PROJECT_DIR$/server/predictor/example_predictor/dummy_predictor.py" />
+    <entry file="file://$PROJECT_DIR$/server/spectrogram/ISpectrogram.py" />
+    <entry file="file://$USER_HOME$/anaconda2/envs/aec/lib/python3.6/codecs.py" />
+    <entry file="file://$PROJECT_DIR$/server/predictor/test_predictor/test_predictor_provider.py" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="420">
+            <caret line="39" column="49" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/spectrogram/madmom_spectrogram_provider.py" />
+    <entry file="file://$PROJECT_DIR$/server/predictor/i_predictor.py" />
+    <entry file="file://$PROJECT_DIR$/server/predictor/dcase_predictor_provider/dcase_predictor_provider.py" />
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hs_err_pid3418.log" />
+    <entry file="file://$USER_HOME$/anaconda3/envs/aec/lib/python3.6/site-packages/flask/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="1814" column="46" lean-forward="true" selection-start-line="1814" selection-start-column="46" selection-end-line="1814" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/config/predictors.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="47" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/config/sources.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/aec/lib/python3.6/site-packages/flask/globals.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/aec/lib/python3.6/site-packages/werkzeug/local.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5145">
+          <caret line="346" selection-start-line="346" selection-end-line="346" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viewer/app/main_app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" column="37" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/consumer/predictors/example_predictor/dummy_predictor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="117" selection-start-line="7" selection-start-column="117" selection-end-line="7" selection-end-column="117" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/spectrogram/prepare_spectrograms.py" />
+    <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/i_visualizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="47" lean-forward="true" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/consumer/predictors/i_predictor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/consumer/predictors/test_predictor/test_predictor_provider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/config/load_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="57" lean-forward="true" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viewer/startup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/webserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-480">
+          <caret line="25" column="34" lean-forward="true" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/producer/signal_provider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="91" column="43" lean-forward="true" selection-start-line="91" selection-start-column="43" selection-end-line="91" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/spectrogram/madmom_spectrogram_provider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="31" column="62" lean-forward="true" selection-start-line="31" selection-start-column="62" selection-end-line="31" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/config/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/audio_tagger_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/dcase_predictor_provider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="60" column="66" lean-forward="true" selection-start-line="60" selection-start-column="66" selection-end-line="60" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

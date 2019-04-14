@@ -1,0 +1,262 @@
+#:import lv kivy.uix.listview
+#:import la kivy.adapters.listadapter
+
+<ListItemButton>:
+    size_hint_y: None
+    size: self.width, 50
+    bold: True
+    background_normal: ''
+    deselected_color: 0.21, 0.25, 0.29, 1
+    selected_color: 0.31, 0.35, 0.39, 1
+    canvas.before:
+        Color:
+            rgba: 0.7, 0.7, 0.7, 1
+        Line:
+            width: 2
+            rectangle: self.x, self.y, self.width, self.height
+
+<AudioTaggerWindow>:
+    canvas:
+        Color:
+            rgb: 0.16, 0.21, 0.24
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    but_1: but_1
+    switch_1: switch_1
+    sourceView: sourceView
+    img_texture: img_texture
+    predView: predView
+    sourceLabel: sourceLabel
+    predictorLabel: predictorLabel
+    fileMessageLabel: fileMessageLabel
+    class1Label: class1Label
+    class1Bar: class1Bar
+    class2Label: class2Label
+    class2Bar: class2Bar
+    class3Label: class3Label
+    class3Bar: class3Bar
+    class4Label: class4Label
+    class4Bar: class4Bar
+    class5Label: class5Label
+    class5Bar: class5Bar
+
+    GridLayout:
+        cols: 2
+        padding: 20
+        spacing: 20
+        GridLayout:
+            cols: 1
+            spacing: 20
+            canvas:
+                Color:
+                    rgba: 0.21, 0.25, 0.29, 1
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            Label:
+                bold: True
+                size_hint_y: None
+                height: self.parent.height * 0.1
+                text: 'Current Spectrogram'
+            Image:
+                padding: 20
+                id: img_texture
+        GridLayout:
+            cols: 2
+            spacing: 20
+            GridLayout:
+                padding: 20
+                spacing: 30
+                cols: 1
+                canvas:
+                    Color:
+                        rgba: 0.21, 0.25, 0.29, 1
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                GridLayout:
+                    cols: 2
+                    size_hint_y: None
+                    height: self.parent.height * 0.1
+                    Label:
+                        bold: True
+                        text: 'Microphone Mode'
+                    Switch:
+                        id: switch_1
+                        active: True
+                ListView:
+                    id: sourceView
+                    size_hint_y: None
+                    adapter:
+                        la.ListAdapter(
+                        data = [elem['displayname'] for elem in root.source_list],
+                        selection_mode='single',
+                        allow_empty_selection=False,
+                        cls=lv.ListItemButton)
+                Label:
+                    id: fileMessageLabel
+                    bold: True
+                    size_hint_y: None
+                    color: 0.95, 0.67, 0.13, 1
+                    text: 'Turn mic off to use files'
+            GridLayout:
+                cols: 1
+                padding: 20
+                spacing: 30
+                canvas:
+                    Color:
+                        rgba: 0.21, 0.25, 0.29, 1
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                Label:
+                    bold: True
+                    size_hint_y: None
+                    height: self.parent.height * 0.1
+                    text: 'Predictors'
+                ListView:
+                    id: predView
+                    adapter:
+                        la.ListAdapter(
+                        data=[elem['displayname'] for elem in root.pred_list],
+                        selection_mode='single',
+                        allow_empty_selection=False,
+                        cls=lv.ListItemButton)
+        GridLayout:
+            cols: 1
+            canvas:
+                Color:
+                    rgba: 0.21, 0.25, 0.29, 1
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            Label:
+                id: class1Label
+                bold: True
+                size_hint_y: None
+                height: self.parent.height * 0.1
+                text: root.class_list[0]
+            Widget:
+                id: class1Bar
+                size_hint_y: None
+                height: self.parent.height * 0.1
+                canvas:
+                    Color:
+                        rgba: 0, 1, 1, .9
+                    RoundedRectangle:
+                        pos: self.x, self.y
+                        size: root.prob_list[0], root.class_bar_height[0]
+            Label:
+                id: class2Label
+                bold: True
+                size_hint_y: None
+                height: self.parent.height * 0.1
+                text: root.class_list[1]
+            Widget:
+                id: class2Bar
+                size_hint_y: None
+                height: self.parent.height * 0.1
+                canvas:
+                    Color:
+                        rgba: 0, 1, 1, .9
+                    RoundedRectangle:
+                        pos: self.x, self.y
+                        size: root.prob_list[1], root.class_bar_height[1]
+            Label:
+                id: class3Label
+                bold: True
+                size_hint_y: None
+                height: self.parent.height * 0.1
+                text: root.class_list[2]
+            Widget:
+                id: class3Bar
+                size_hint_y: None
+                height: self.parent.height * 0.1
+                canvas:
+                    Color:
+                        rgba: 0, 1, 1, .9
+                    RoundedRectangle:
+                        pos: self.x, self.y
+                        size: root.prob_list[2], root.class_bar_height[2]
+            Label:
+                id: class4Label
+                bold: True
+                size_hint_y: None
+                height: self.parent.height * 0.1
+                text: root.class_list[3]
+            Widget:
+                id: class4Bar
+                size_hint_y: None
+                height: self.parent.height * 0.1
+                canvas:
+                    Color:
+                        rgba: 0, 1, 1, .9
+                    RoundedRectangle:
+                        pos: self.x, self.y
+                        size: root.prob_list[3], root.class_bar_height[3]
+            Label:
+                id: class5Label
+                bold: True
+                size_hint_y: None
+                height: self.parent.height * 0.1
+                text: root.class_list[4]
+            Widget:
+                id: class5Bar
+                size_hint_y: None
+                height: self.parent.height * 0.1
+                canvas:
+                    Color:
+                        rgba: 0, 1, 1, .9
+                    RoundedRectangle:
+                        pos: self.x, self.y
+                        size: root.prob_list[4], root.class_bar_height[4]
+        GridLayout:
+            cols: 1
+            spacing: 100
+            GridLayout:
+                cols: 2
+                spacing: 20
+                GridLayout:
+                    cols: 1
+                    canvas:
+                        Color:
+                            rgba: 0.21, 0.25, 0.29, 1
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                    Label:
+                        id: sourceLabel
+                        text: root.sourceProperty
+                        bold: True
+                        font_size: 20
+                GridLayout:
+                    cols: 1
+                    canvas:
+                        Color:
+                            rgba: 0.21, 0.25, 0.29, 1
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                    Label:
+                        id: predictorLabel
+                        text: root.predictorProperty
+                        bold: True
+                        font_size: 20
+            Button:
+                id: but_1
+                text: 'Start'
+                size_hint_y: None
+                height: self.parent.height * 0.2
+                font_size: 20
+                bold: True
+                background_normal: ''
+                background_color: 0.35, 0.66, 0.41, 1
+                on_press: root.start_Button_pressed(but_1.text)
+                canvas.before:
+                    Color:
+                        rgba: 1, 1, 1, 1
+                    Line:
+                        width: 4
+                        rectangle: self.x, self.y, self.width, self.height
