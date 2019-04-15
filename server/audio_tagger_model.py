@@ -145,5 +145,7 @@ class AudioTaggerModel:
         self.predThread.start()
 
     def put_signal(self, signal):
-        self.specProvider.buffer.append(signal)
-        self.predProvider.buffer.append(signal)
+        # self.specProvider.buffer.append(signal)
+        # self.predProvider.buffer.append(signal)
+        self.specProvider.buffer.put(signal)
+        self.predProvider.buffer.put(signal)
