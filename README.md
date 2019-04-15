@@ -10,8 +10,8 @@ This project provides components for predicting audio input and showing its corr
 &nbsp;&nbsp;&nbsp;&nbsp; directory with a sample python GUI  
 
 ## Installation
-Use Python 3 in order to get the code running!  
-Version used during development: ```3.6.2```
+Use Python 3 and Anaconda in order to get the code running for guarantee!  
+Version used during development: ```3.6.7```
 
 1. ```python setup.py develop```
 
@@ -108,9 +108,10 @@ One can add new predictors by editing the CSV-file [predictors.csv](server/confi
 #### Steps for building predictor wrapper
 The next few steps show how to integrate a predictor into the backend system of the audio tagger:  
 1. Extend predictors.csv with the properties of the new predictor  
-    * Important note: Make sure that the given path in column ```predictorClassPath``` correctly identifies the path to the wrapper class. Otherwise, the backend cannot find the new predictor. There are already 2 predictors included. Have a look at this.
+    * Important note: Make sure that the given path in column ```predictorClassPath``` correctly identifies the path to the wrapper class. Otherwise, the backend cannot find the new predictor. There are already 3 predictors included. Have a look at this.
 2. Implement a predictor such that it inherits from ```IPredictor``` ([see here](server/predictor/IPredictor.py)) 
-3. Call ```self.model.onNewPredictionCalculated(probabilities)``` at the end of function ```predict()``` from ```IPredictor``` to inform model of new prediction.  
+3. Call base class constructor!
+
     * parameter ```probabilities```: ```[["class1", 0.0006955251446925104, 0], ["class2", 0.0032770668622106314, 1], ...]```   
 ```1. element```: category name  
 ```2. element```: probability of prediction for this class  
