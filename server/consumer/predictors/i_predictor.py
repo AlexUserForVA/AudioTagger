@@ -1,12 +1,14 @@
-from collections import deque
+import Queue
+# from collections import deque
 
 from server.config.config import BUFFER_SIZE
 
 class IPredictor:
 
     def __init__(self):
-        self.buffer = deque(maxlen=BUFFER_SIZE)
-
+        # self.buffer = deque(maxlen=BUFFER_SIZE)
+        self.buffer = Queue.Queue(maxsize=BUFFER_SIZE)
+            
     def predict(self):
         """
         Executes a particular predictor model
