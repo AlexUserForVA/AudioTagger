@@ -8,7 +8,10 @@ class IPredictor:
     def __init__(self):
         # self.buffer = deque(maxlen=BUFFER_SIZE)
         self.buffer = Queue.Queue(maxsize=BUFFER_SIZE)
-            
+        
+    def refreshBuffer(self):
+        self.buffer = Queue.Queue(maxsize=BUFFER_SIZE)
+        
     def predict(self):
         """
         Executes a particular predictor model
