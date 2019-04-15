@@ -132,8 +132,10 @@ class AudioTaggerModel:
         newPredProvider = predProviderClass()
         self.setPredProvider(newPredProvider)
 
-        self.specProvider.buffer.clear()
-        self.predProvider.buffer.clear()
+        # self.specProvider.buffer.clear()
+        # self.predProvider.buffer.clear()
+        self.specProvider.refreshBuffer()
+        self.predProvider.refreshBuffer()
 
         # self.syncBarrier.reset()
 
