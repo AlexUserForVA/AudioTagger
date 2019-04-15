@@ -43,7 +43,8 @@ class DcasePredictorProvider(IPredictor):
         self.sliding_window = np.zeros((128, 256), dtype=np.float32)
 
     def predict(self):
-        if len(self.buffer) > 0:
+        if not self.buffer.empty():
+        # if len(self.buffer) > 0:
             # frame = self.buffer.popleft()
             frame = self.buffer.get()
             spectrogram = self.processorPipeline.process(frame)
