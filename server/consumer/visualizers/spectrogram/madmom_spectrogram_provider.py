@@ -23,8 +23,9 @@ class MadmomSpectrogramProvider(IVisualizer):
 
     def computeSpectrogram(self):
         if len(self.buffer) > 0:
-            frame = self.buffer.popleft()
-
+            # frame = self.buffer.popleft()
+            frame = self.buffer.get()
+            
             spectrogram = self.processorPipeline.process(frame)
             # check if there is audio content
             frame = spectrogram[0]
