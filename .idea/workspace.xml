@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9015c207-3912-40b0-9892-7d06d89d8353" name="Default Changelist" comment="" />
+    <list default="true" id="9015c207-3912-40b0-9892-7d06d89d8353" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/audio_tagger_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/audio_tagger_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/config/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/dcase_predictor_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/dcase_predictor_provider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/consumer/predictors/example_predictor/dummy_predictor.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/consumer/predictors/example_predictor/dummy_predictor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/consumer/predictors/i_predictor.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/consumer/predictors/i_predictor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/consumer/predictors/test_predictor/test_predictor_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/consumer/predictors/test_predictor/test_predictor_provider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/consumer/visualizers/i_visualizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/consumer/visualizers/i_visualizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/producer/signal_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/producer/signal_provider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/webserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/webserver.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,8 +55,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/config/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="60">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -54,30 +65,30 @@
         <entry file="file://$PROJECT_DIR$/viewer/startup.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/config/load_config.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="57" lean-forward="true" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
+              <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/dcase_predictor_provider.py">
+        <entry file="file://$PROJECT_DIR$/server/consumer/predictors/test_predictor/test_predictor_provider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="60" column="66" lean-forward="true" selection-start-line="60" selection-start-column="66" selection-end-line="60" selection-end-column="66" />
+            <state relative-caret-position="120">
+              <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/consumer/predictors/example_predictor/dummy_predictor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -86,8 +97,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/producer/signal_provider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="91" column="43" lean-forward="true" selection-start-line="91" selection-start-column="43" selection-end-line="91" selection-end-column="43" />
+            <state relative-caret-position="571">
+              <caret line="82" column="40" lean-forward="true" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/dcase_predictor_provider.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="76" lean-forward="true" selection-start-line="17" selection-start-column="76" selection-end-line="17" selection-end-column="76" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,8 +118,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/webserver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-480">
-              <caret line="25" column="34" lean-forward="true" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+            <state relative-caret-position="607">
+              <caret line="86" column="30" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -107,8 +130,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/audio_tagger_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
+            <state relative-caret-position="420">
+              <caret line="28" column="32" lean-forward="true" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -117,12 +140,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/spectrogram/madmom_spectrogram_provider.py">
+        <entry file="file://$PROJECT_DIR$/server/consumer/predictors/i_predictor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="31" column="62" lean-forward="true" selection-start-line="31" selection-start-column="62" selection-end-line="31" selection-end-column="62" />
+            <state relative-caret-position="345">
+              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#0#12#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/i_visualizer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="7" selection-start-line="7" selection-end-line="9" selection-end-column="54" />
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -189,18 +224,18 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/server/config/sources.csv" />
-        <option value="$PROJECT_DIR$/server/webserver.py" />
-        <option value="$PROJECT_DIR$/server/consumer/predictors/example_predictor/dummy_predictor.py" />
-        <option value="$PROJECT_DIR$/server/consumer/predictors/test_predictor/test_predictor_provider.py" />
         <option value="$PROJECT_DIR$/server/config/config.txt" />
+        <option value="$PROJECT_DIR$/server/config/load_config.py" />
+        <option value="$PROJECT_DIR$/server/consumer/visualizers/spectrogram/madmom_spectrogram_provider.py" />
         <option value="$PROJECT_DIR$/server/consumer/visualizers/i_visualizer.py" />
         <option value="$PROJECT_DIR$/server/consumer/predictors/i_predictor.py" />
-        <option value="$PROJECT_DIR$/server/config/load_config.py" />
-        <option value="$PROJECT_DIR$/server/producer/signal_provider.py" />
-        <option value="$PROJECT_DIR$/server/consumer/visualizers/spectrogram/madmom_spectrogram_provider.py" />
+        <option value="$PROJECT_DIR$/server/webserver.py" />
         <option value="$PROJECT_DIR$/server/config/config.py" />
         <option value="$PROJECT_DIR$/server/audio_tagger_model.py" />
+        <option value="$PROJECT_DIR$/server/producer/signal_provider.py" />
         <option value="$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/dcase_predictor_provider.py" />
+        <option value="$PROJECT_DIR$/server/consumer/predictors/example_predictor/dummy_predictor.py" />
+        <option value="$PROJECT_DIR$/server/consumer/predictors/test_predictor/test_predictor_provider.py" />
       </list>
     </option>
   </component>
@@ -220,44 +255,29 @@
         <subPane>
           <expand>
             <path>
-              <item name="AEC_AudioTaggerGUI_v2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AEC_AudioTaggerGUI_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioTagger" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioTagger" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="AEC_AudioTaggerGUI_v2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AEC_AudioTaggerGUI_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioTagger" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioTagger" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="AEC_AudioTaggerGUI_v2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AEC_AudioTaggerGUI_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioTagger" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioTagger" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="AEC_AudioTaggerGUI_v2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AEC_AudioTaggerGUI_v2" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="consumer" type="462c0819:PsiDirectoryNode" />
-              <item name="visualizers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AEC_AudioTaggerGUI_v2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AEC_AudioTaggerGUI_v2" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="consumer" type="462c0819:PsiDirectoryNode" />
-              <item name="visualizers" type="462c0819:PsiDirectoryNode" />
-              <item name="spectrogram" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AEC_AudioTaggerGUI_v2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AEC_AudioTaggerGUI_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioTagger" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioTagger" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="producer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="AEC_AudioTaggerGUI_v2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AEC_AudioTaggerGUI_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioTagger" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioTagger" type="462c0819:PsiDirectoryNode" />
               <item name="viewer" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -272,6 +292,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -576,6 +597,8 @@
       <workItem from="1555219780403" duration="107000" />
       <workItem from="1555252847635" duration="4174000" />
       <workItem from="1555263222445" duration="10619000" />
+      <workItem from="1555337697802" duration="6748000" />
+      <workItem from="1555361341282" duration="1803000" />
     </task>
     <task id="LOCAL-00001" summary="Added controller class, instantiate mvc components in startup">
       <created>1553337402631</created>
@@ -700,7 +723,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="313345000" />
+    <option name="totallyTimeSpent" value="321896000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -715,7 +738,7 @@
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17376868" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1776425" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -730,7 +753,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32829374" />
-      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.2526998" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.2526998" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.3291536" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -844,14 +867,9 @@
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/server/producer/signal_provider.py</url>
-          <line>61</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/server/producer/signal_provider.py</url>
-          <line>84</line>
-          <option name="timeStamp" value="31" />
+          <url>file://$PROJECT_DIR$/server/audio_tagger_model.py</url>
+          <line>113</line>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -865,6 +883,8 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AEC_AudioTaggerGUI_v2$webserver.coverage" NAME="webserver Coverage Results" MODIFIED="1555270639322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+    <SUITE FILE_PATH="coverage/AudioTagger$startup.coverage" NAME="startup Coverage Results" MODIFIED="1555362951654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AudioTagger$webserver.coverage" NAME="webserver Coverage Results" MODIFIED="1555343167179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
     <SUITE FILE_PATH="coverage/AEC_AudioTaggerGUI$startup.coverage" NAME="startup Coverage Results" MODIFIED="1555191138468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AEC_AudioTaggerGUI$webserver.coverage" NAME="webserver Coverage Results" MODIFIED="1555253768179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
   </component>
@@ -978,109 +998,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/viewer/app/main_app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="49" column="37" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/consumer/predictors/example_predictor/dummy_predictor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="117" selection-start-line="7" selection-start-column="117" selection-end-line="7" selection-end-column="117" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/spectrogram/prepare_spectrograms.py" />
-    <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/i_visualizer.py">
+    <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/spectrogram/madmom_spectrogram_provider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="47" lean-forward="true" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/consumer/predictors/i_predictor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/consumer/predictors/test_predictor/test_predictor_provider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        <state relative-caret-position="30">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/config/load_config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="15" column="57" lean-forward="true" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
+          <caret line="15" column="57" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/viewer/startup.py">
+    <entry file="file://$PROJECT_DIR$/viewer/app/main_app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/webserver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-480">
-          <caret line="25" column="34" lean-forward="true" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/producer/signal_provider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="91" column="43" lean-forward="true" selection-start-line="91" selection-start-column="43" selection-end-line="91" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/spectrogram/madmom_spectrogram_provider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="31" column="62" lean-forward="true" selection-start-line="31" selection-start-column="62" selection-end-line="31" selection-end-column="62" />
+        <state relative-caret-position="-1163">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/consumer/predictors/i_predictor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/i_visualizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" selection-start-line="7" selection-end-line="9" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/config/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viewer/startup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/webserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="607">
+          <caret line="86" column="30" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/audio_tagger_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
+        <state relative-caret-position="420">
+          <caret line="28" column="32" lean-forward="true" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -1089,10 +1082,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/dcase_predictor_provider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="60" column="66" lean-forward="true" selection-start-line="60" selection-start-column="66" selection-end-line="60" selection-end-column="66" />
+        <state relative-caret-position="255">
+          <caret line="17" column="76" lean-forward="true" selection-start-line="17" selection-start-column="76" selection-end-line="17" selection-end-column="76" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/producer/signal_provider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="571">
+          <caret line="82" column="40" lean-forward="true" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/consumer/predictors/example_predictor/dummy_predictor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/consumer/predictors/test_predictor/test_predictor_provider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>

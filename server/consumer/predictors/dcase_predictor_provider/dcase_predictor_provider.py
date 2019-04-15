@@ -33,7 +33,6 @@ class DcasePredictorProvider(IPredictor):
                "Writing"]
 
     def __init__(self):
-        super(DcasePredictorProvider, self).__init__()
         self.prediction_model = Net()
         self.prediction_model.load_state_dict(
             torch.load(os.path.join(PROJECT_ROOT, 'server/consumer/predictors/dcase_predictor_provider/baseline_net.pt'),  map_location=lambda storage, location: storage))
@@ -44,8 +43,6 @@ class DcasePredictorProvider(IPredictor):
 
     def predict(self):
         if not self.buffer.empty():
-        # if len(self.buffer) > 0:
-            # frame = self.buffer.popleft()
             frame = self.buffer.get()
             spectrogram = self.processorPipeline.process(frame)
 

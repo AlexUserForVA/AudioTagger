@@ -4,7 +4,7 @@ import numpy as np
 from pydoc import locate
 from threading import Thread, Event, Barrier
 
-from server.config.config import N_PARALLEL_CONSUMERS
+from server.config.config import N_PARALLEL_CONSUMERS, PRODUCER_TIMEOUT_IN_SEC
 from server.producer.signal_provider import ProducerThread
 
 class SpectrogramThread(Thread):
@@ -76,6 +76,9 @@ class AudioTaggerModel:
 
         self.syncBarrier = Barrier(N_PARALLEL_CONSUMERS)
 
+        self.specProvider.refreshBuffer()
+        self.predProvider.refreshBuffer()
+
         self.startThreads()
 
     def getPredList(self):
@@ -109,8 +112,8 @@ class AudioTaggerModel:
 
     ############ Refresh function #############
     def refreshAudioTagger(self, settings):
-        self.predThread.join()
         self.specThread.join()
+        self.predThread.join()
         self.producerThread.join()
 
         self.syncBarrier = Barrier(N_PARALLEL_CONSUMERS)
@@ -149,5 +152,5 @@ class AudioTaggerModel:
     def put_signal(self, signal):
         # self.specProvider.buffer.append(signal)
         # self.predProvider.buffer.append(signal)
-        self.specProvider.buffer.put(signal)
-        self.predProvider.buffer.put(signal)
+        self.specProvider.buffer.put(signal, timeout = PRODUCER_TIMEOUT_IN_SEC)
+        self.predProvider.buffer.put(signal, timeout = PRODUCER_TIMEOUT_IN_SEC)

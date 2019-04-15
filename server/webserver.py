@@ -22,7 +22,7 @@ signalProvider = SignalProvider()
 
 specsProvider = MadmomSpectrogramProvider()
 
-predProviderClass = locate('server.consumer.predictors.{}'.format(predList[0]['predictorClassPath']))
+predProviderClass = locate('server.consumer.predictors.{}'.format(predList[1]['predictorClassPath']))
 predProvider = predProviderClass()
 
 model = AudioTaggerModel(signalProvider, specsProvider, predProvider, predList, sourceList)
@@ -88,7 +88,7 @@ def add_message():
 
 def convertSpecToJPG(spec):
     spec = spec / 3.0
-    resz_spec = 2
+    resz_spec = 3
     spec = cv2.resize(spec, (spec.shape[1] * resz_spec, spec.shape[0] * resz_spec))
     spec = plt.cm.viridis(spec)[:, :, 0:3]
     spec_bgr = (spec * 255).astype(np.uint8)

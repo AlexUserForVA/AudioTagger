@@ -9,21 +9,18 @@ class ProducerThread(threading.Thread):
         threading.Thread.__init__(self, name=name)
 
     def run(self):
-        self.model.producer.run(self.audioSource)
+        stream = self.model.producer.produce(self.audioSource)
+        for frame in stream:
+            if self._stopevent.isSet():
+                return
+            self.model.put_signal(frame)
 
     def join(self, timeout=None):
         """ Stop the thread. """
-        self.model.producer.stopProcessing()
         self._stopevent.set()
         threading.Thread.join(self, timeout)
 
 class SignalProvider:
-
-    def __init__(self):
-        self.stopFlag = False
-
-    def stopProcessing(self):
-        self.stopFlag = True
 
     # function stems from madmom (https://github.com/CPJKU/madmom/blob/master/madmom/processors.py)
     def produce(self, infile, **kwargs):
@@ -90,16 +87,8 @@ class SignalProvider:
         #       processors at every time step (kwargs contains file handles etc.)
         # process_args = {'reset': False}  # do not reset stateful processors
         # process everything frame-by-frame
-        for frame in stream:
-            # counter += 1
-            # print(counter)
-            if self.stopFlag:
-                break
-            self.model.put_signal(frame)
+        return stream
 
-    def run(self, audioSource):
-        self.stopFlag = False
-        self.produce(audioSource)
 
     def registerModel(self, model):
         self.model = model
