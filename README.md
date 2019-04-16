@@ -23,6 +23,7 @@ Version used during development: ```3.6.7```
         * Flask  
         * Cython  
         * madmom  
+	* pytorch  
         * torchvision  
         * pyaudio  
         * requests  
