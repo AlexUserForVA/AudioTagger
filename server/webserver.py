@@ -22,7 +22,7 @@ signalProvider = SignalProvider()
 
 specsProvider = MadmomSpectrogramProvider()
 
-predProviderClass = locate('server.consumer.predictors.{}'.format(predList[1]['predictorClassPath']))
+predProviderClass = locate('server.consumer.predictors.{}'.format(predList[0]['predictorClassPath']))
 predProvider = predProviderClass()
 
 model = AudioTaggerModel(signalProvider, specsProvider, predProvider, predList, sourceList)
