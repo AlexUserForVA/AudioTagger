@@ -2,7 +2,6 @@ import time
 import wave
 import threading
 import pyaudio
-import numpy as np
 
 from server.config.config import BUFFER_SIZE
 
@@ -26,7 +25,6 @@ class MicrophoneThread(threading.Thread):
 
         while not self._stopevent.isSet():
             chunk = stream.read(self.CHUNK_SIZE)
-            chunk = np.fromstring(chunk, np.int16)
             self.model.putToSM(chunk)
 
 
@@ -51,8 +49,7 @@ class FileThread(threading.Thread):
     def run(self):
         data = self.wf.readframes(self.CHUNK_SIZE)
         while not self._stopevent.isSet() and data != b'':
-            time.sleep(0.03)
-            # print(time.time())
+            time.sleep(0.025)
             self.model.putToSM(data)
             data = self.wf.readframes(self.CHUNK_SIZE)
             self.t += 1

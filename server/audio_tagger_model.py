@@ -23,10 +23,10 @@ class SpectrogramThread(Thread):
             if len(self.model.sharedMemory) > self.t:
                 # time.sleep(0.029)
                 spec = self.model.specProvider.computeSpectrogram(self.t)
-                self.t += 1
-                self.t = self.t % BUFFER_SIZE
                 if spec is not None:
                     self.model.onNewSpectrogramCalculated(spec)
+                self.t += 1
+                self.t = self.t % BUFFER_SIZE
 
     def join(self, timeout=None):
         """ Stop the thread. """
