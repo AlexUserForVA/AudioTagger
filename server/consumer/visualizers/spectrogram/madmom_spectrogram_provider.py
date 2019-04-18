@@ -15,13 +15,13 @@ class MadmomSpectrogramProvider(IVisualizer):
     t = 0
 
     sig_proc = SignalProcessor(num_channels=1, sample_rate=32000, norm=True)
-    fsig_proc = FramedSignalProcessor(frame_size=1024, hop_size=128, origin='future')
-    spec_proc = SpectrogramProcessor(frame_size=1024)
+    fsig_proc = FramedSignalProcessor(frame_size=256, hop_size=128, origin='future')
+    spec_proc = SpectrogramProcessor(frame_size=256)
     filt_proc = LogarithmicFilteredSpectrogramProcessor(filterbank=LogFilterbank, num_bands=26, fmin=20, fmax=14000)
     processorPipeline = SequentialProcessor([sig_proc, fsig_proc, spec_proc, filt_proc])
 
     def __init__(self):
-        self.sliding_window = np.zeros((128, 256), dtype=np.float32)
+        self.sliding_window = np.zeros((77, 256), dtype=np.float32)
 
     def registerModel(self, model):
         self.model = model

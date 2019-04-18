@@ -13,7 +13,7 @@ from server.config.config import BUFFER_SIZE, START_FILE
 
 class MicrophoneThread(Thread):
 
-    CHUNK_SIZE = 1024
+    CHUNK_SIZE = 256
     SAMPLE_RATE = 32000
 
     def __init__(self, model, name='MicrophoneThread'):
@@ -39,9 +39,10 @@ class MicrophoneThread(Thread):
         self._stopevent.set()
         Thread.join(self, timeout)
 
-class SpectrogramThread(Thread):
 
-    def __init__(self, model, name='SpectrogramThread'):
+class VisualisationThread(Thread):
+
+    def __init__(self, model, name='VisualisationThread'):
         self.t = 0
         self.model = model
         self._stopevent = Event()
@@ -85,7 +86,7 @@ class PredictionThread(Thread):
 
 class AudioThread(Thread):
 
-    CHUNK_SIZE = 1024
+    CHUNK_SIZE = 256
 
     def __init__(self, model, filePath, name='AudioThread'):
         self.p = pyaudio.PyAudio()
@@ -125,7 +126,7 @@ class AudioTaggerModel:
         self.predProvider = predProvider
 
         # initialization
-        self.liveSpec = np.zeros((128, 256), dtype=np.float32)
+        self.liveSpec = np.zeros((103, 256), dtype=np.float32)
         self.livePred = [["Class{}".format(index), 0.2, index] for index in range(10)]
 
         self.specProvider.registerModel(self)
@@ -168,17 +169,17 @@ class AudioTaggerModel:
             filePath = [elem['path'] for elem in self.getSourceList() if elem['id'] == START_FILE][0]
             self.producerThread = AudioThread(self, filePath)
 
-        self.specThread = SpectrogramThread(self)
-        self.predThread = PredictionThread(self)
+        self.specThread = VisualisationThread(self)
+        # self.predThread = PredictionThread(self)
         self.producerThread.start()
         self.specThread.start()
-        self.predThread.start()
+        # self.predThread.start()
 
     ############ Refresh function #############
     def refreshAudioTagger(self, settings):
         # self.audioThread.join()
         self.specThread.join()
-        self.predThread.join()
+        # self.predThread.join()
         self.producerThread.join()
 
         self.nextSlot = 0
@@ -204,11 +205,11 @@ class AudioTaggerModel:
         self.sharedMemory.clear()
 
         self.producerThread.start()
-        self.specThread = SpectrogramThread(self)
+        self.specThread = VisualisationThread(self)
         self.specThread.start()
 
-        self.predThread = PredictionThread(self)
-        self.predThread.start()
+        # self.predThread = PredictionThread(self)
+        # self.predThread.start()
 
     def putToSM(self, chunk):
         self.sharedMemory.append(chunk)
