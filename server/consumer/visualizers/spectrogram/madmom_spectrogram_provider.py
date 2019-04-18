@@ -11,6 +11,9 @@ from server.consumer.visualizers.i_visualizer import IVisualizer
 
 class MadmomSpectrogramProvider(IVisualizer):
 
+    t = 0
+    counter = 0
+
     sig_proc = SignalProcessor(num_channels=1, sample_rate=32000, norm=True)
     fsig_proc = FramedSignalProcessor(frame_size=1024, hop_size=128, origin='future')
     spec_proc = SpectrogramProcessor(frame_size=1024)
@@ -18,27 +21,53 @@ class MadmomSpectrogramProvider(IVisualizer):
     processorPipeline = SequentialProcessor([sig_proc, fsig_proc, spec_proc, filt_proc])
 
     def __init__(self):
-        super(MadmomSpectrogramProvider, self).__init__()
         self.sliding_window = np.zeros((128, 256), dtype=np.float32)
 
-    def computeSpectrogram(self):
-        if not self.buffer.empty():
-        # if len(self.buffer) > 0:
-            # frame = self.buffer.popleft()
-            frame = self.buffer.get()
-            
-            spectrogram = self.processorPipeline.process(frame)
+    def registerModel(self, model):
+        self.model = model
+
+    '''
+    cur_window = np.zeros((128, 256), dtype=np.float32)
+
+    def computeSpectrogramFull(self):
+        print(time.time())
+        if len(self.model.sharedMemory) > 256 + self.t:
+            for i in range(256):
+                frame = self.processorPipeline.process(self.model.sharedMemory[self.t + i][1])[0]
+
             # check if there is audio content
-            frame = spectrogram[0]
-            if np.any(np.isnan(frame)):
-                frame = np.zeros_like(frame, dtype=np.float32)
+            # frame = spectrogram[0]
+            # if np.any(np.isnan(frame)):
+            #    frame = np.zeros_like(frame, dtype=np.float32)
 
             # update sliding window
-            self.sliding_window[:, 0:-1] = self.sliding_window[:, 1::]
-            self.sliding_window[:, -1] = frame
-            return self.sliding_window.copy()
+                self.cur_window[:, 0:-1] = self.cur_window[:, 1::]
+                self.cur_window[:, -1] = frame
 
+            # _ = self.buffer.get()
+            self.t += 1
+            return self.cur_window.copy()
+    '''
 
+    def computeSpectrogram(self, t):
+        # print(time.time())
+        frame = self.model.sharedMemory[t][1]
+        frame = np.fromstring(frame, np.int16)
+
+        spectrogram = self.processorPipeline.process(frame)
+        # check if there is audio content
+        frame = spectrogram[0]
+        if np.any(np.isnan(frame)):
+            frame = np.zeros_like(frame, dtype=np.float32)
+
+        # update sliding window
+        self.sliding_window[:, 0:-1] = self.sliding_window[:, 1::]
+        self.sliding_window[:, -1] = frame
+
+        # self.counter += 1
+        # print("Spectrogram: " + str(self.counter))
+
+        return self.sliding_window.copy()
     '''
     # function stems from madmom (https://github.com/CPJKU/madmom/blob/master/madmom/processors.py)
     def process_online(self, processor, infile, outfile, **kwargs):

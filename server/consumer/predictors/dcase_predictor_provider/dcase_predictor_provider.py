@@ -41,25 +41,28 @@ class DcasePredictorProvider(IPredictor):
 
         self.sliding_window = np.zeros((128, 256), dtype=np.float32)
 
-    def predict(self):
-        if not self.buffer.empty():
-            frame = self.buffer.get()
-            spectrogram = self.processorPipeline.process(frame)
+    def registerModel(self, model):
+        self.model = model
 
-            # check if there is audio content
-            frame = spectrogram[0]
-            if np.any(np.isnan(frame)):
-                frame = np.zeros_like(frame, dtype=np.float32)
+    def predict(self, t):
+        frame = self.model.sharedMemory[t][1]
+        spectrogram = self.processorPipeline.process(frame)
 
-            # update sliding window
-            self.sliding_window[:, 0:-1] = self.sliding_window[:, 1::]
-            self.sliding_window[:, -1] = frame
+        # check if there is audio content
+        frame = spectrogram[0]
+        if np.any(np.isnan(frame)):
+            frame = np.zeros_like(frame, dtype=np.float32)
 
-            input = self.sliding_window[np.newaxis, np.newaxis]
-            cuda_torch_input = torch.from_numpy(input).to(device)
-            model_output = self.prediction_model(cuda_torch_input)
-            softmax = nn.Softmax(dim=1)
-            softmax_output = softmax(model_output)
-            predicts = softmax_output.cpu().detach().numpy().flatten()
-            probs = [[elem, predicts[index].item(), index] for index, elem in enumerate(self.classes)]
-            return probs
+        # update sliding window
+        self.sliding_window[:, 0:-1] = self.sliding_window[:, 1::]
+        self.sliding_window[:, -1] = frame
+
+        input = self.sliding_window[np.newaxis, np.newaxis]
+        cuda_torch_input = torch.from_numpy(input).to(device)
+        model_output = self.prediction_model(cuda_torch_input)
+        softmax = nn.Softmax(dim=1)
+        softmax_output = softmax(model_output)
+        predicts = softmax_output.cpu().detach().numpy().flatten()
+        probs = [[elem, predicts[index].item(), index] for index, elem in enumerate(self.classes)]
+
+        return probs

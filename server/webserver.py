@@ -10,6 +10,7 @@ from server.producer.signal_provider import SignalProvider
 from server.consumer.visualizers.spectrogram.madmom_spectrogram_provider import MadmomSpectrogramProvider
 from server.audio_tagger_model import AudioTaggerModel
 from server.config.load_config import loadPredictors, loadSources
+from server.config.config import START_PREDICTOR
 
 ############### construct audio tagger model ####################
 
@@ -18,15 +19,13 @@ predList = loadPredictors()
 sourceList = loadSources()
 
 # create signal provider
-signalProvider = SignalProvider()
 
 specsProvider = MadmomSpectrogramProvider()
 
-predProviderClass = locate('server.consumer.predictors.{}'.format(predList[1]['predictorClassPath']))
+predProviderClass = locate('server.consumer.predictors.{}'.format(predList[int(START_PREDICTOR)]['predictorClassPath']))
 predProvider = predProviderClass()
 
-model = AudioTaggerModel(signalProvider, specsProvider, predProvider, predList, sourceList)
-
+model = AudioTaggerModel(specsProvider, predProvider, predList, sourceList)
 
 ###### startup web server to provide audio tagger REST API ######
 app = Flask(__name__)
