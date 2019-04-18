@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 from pydoc import locate
 from flask import Flask, Response, request
 
-from server.producer.signal_provider import SignalProvider
 from server.consumer.visualizers.spectrogram.madmom_spectrogram_provider import MadmomSpectrogramProvider
 from server.audio_tagger_model import AudioTaggerModel
 from server.config.load_config import loadPredictors, loadSources

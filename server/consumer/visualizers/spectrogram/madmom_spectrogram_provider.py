@@ -7,12 +7,12 @@ from madmom.audio.filters import LogFilterbank
 from madmom.processors import SequentialProcessor, Processor
 
 from server.consumer.visualizers.i_visualizer import IVisualizer
+from server.config.config import BUFFER_SIZE
 
 
 class MadmomSpectrogramProvider(IVisualizer):
 
     t = 0
-    counter = 0
 
     sig_proc = SignalProcessor(num_channels=1, sample_rate=32000, norm=True)
     fsig_proc = FramedSignalProcessor(frame_size=1024, hop_size=128, origin='future')
@@ -51,9 +51,9 @@ class MadmomSpectrogramProvider(IVisualizer):
 
     def computeSpectrogram(self, t):
         # print(time.time())
-        frame = self.model.sharedMemory[t][1]
+        # t = self.model.tGroundTruth
+        frame = self.model.sharedMemory[t]
         frame = np.fromstring(frame, np.int16)
-
         spectrogram = self.processorPipeline.process(frame)
         # check if there is audio content
         frame = spectrogram[0]

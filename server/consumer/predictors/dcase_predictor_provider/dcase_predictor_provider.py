@@ -45,7 +45,8 @@ class DcasePredictorProvider(IPredictor):
         self.model = model
 
     def predict(self, t):
-        frame = self.model.sharedMemory[t][1]
+        frame = self.model.sharedMemory[t]
+        frame = np.fromstring(frame, np.int16)
         spectrogram = self.processorPipeline.process(frame)
 
         # check if there is audio content
@@ -57,12 +58,13 @@ class DcasePredictorProvider(IPredictor):
         self.sliding_window[:, 0:-1] = self.sliding_window[:, 1::]
         self.sliding_window[:, -1] = frame
 
-        input = self.sliding_window[np.newaxis, np.newaxis]
-        cuda_torch_input = torch.from_numpy(input).to(device)
-        model_output = self.prediction_model(cuda_torch_input)
-        softmax = nn.Softmax(dim=1)
-        softmax_output = softmax(model_output)
-        predicts = softmax_output.cpu().detach().numpy().flatten()
-        probs = [[elem, predicts[index].item(), index] for index, elem in enumerate(self.classes)]
+        if t % 50 == 0:
+            input = self.sliding_window[np.newaxis, np.newaxis]
+            cuda_torch_input = torch.from_numpy(input).to(device)
+            model_output = self.prediction_model(cuda_torch_input)
+            softmax = nn.Softmax(dim=1)
+            softmax_output = softmax(model_output)
+            predicts = softmax_output.cpu().detach().numpy().flatten()
+            probs = [[elem, predicts[index].item(), index] for index, elem in enumerate(self.classes)]
 
-        return probs
+            return probs
