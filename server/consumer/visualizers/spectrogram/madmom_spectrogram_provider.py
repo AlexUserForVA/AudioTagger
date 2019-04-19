@@ -6,6 +6,7 @@ from madmom.audio.spectrogram import SpectrogramProcessor, LogarithmicFilteredSp
 from madmom.audio.filters import LogFilterbank
 from madmom.processors import SequentialProcessor, Processor
 
+from server.config.config import BUFFER_SIZE
 from server.consumer.visualizers.i_visualizer import IVisualizer
 
 
@@ -24,35 +25,12 @@ class MadmomSpectrogramProvider(IVisualizer):
     def registerModel(self, model):
         self.model = model
 
-    '''
-    cur_window = np.zeros((128, 256), dtype=np.float32)
-
-    def computeSpectrogramFull(self):
-        print(time.time())
-        if len(self.model.sharedMemory) > 256 + self.t:
-            for i in range(256):
-                frame = self.processorPipeline.process(self.model.sharedMemory[self.t + i][1])[0]
-
-            # check if there is audio content
-            # frame = spectrogram[0]
-            # if np.any(np.isnan(frame)):
-            #    frame = np.zeros_like(frame, dtype=np.float32)
-
-            # update sliding window
-                self.cur_window[:, 0:-1] = self.cur_window[:, 1::]
-                self.cur_window[:, -1] = frame
-
-            # _ = self.buffer.get()
-            self.t += 1
-            return self.cur_window.copy()
-    '''
-
     def computeSpectrogram(self, tGroundTruth):
-        # print(time.time())
         if tGroundTruth != self.lastProceededGroundTruth:
-            frame = self.model.sharedMemory[tGroundTruth - 1]
+            frame = self.model.sharedMemory[(tGroundTruth - 1) % BUFFER_SIZE]
             frame = np.fromstring(frame, np.int16)
             spectrogram = self.processorPipeline.process(frame)
+
             # check if there is audio content
             frame = spectrogram[0]
             if np.any(np.isnan(frame)):
@@ -64,7 +42,5 @@ class MadmomSpectrogramProvider(IVisualizer):
 
             self.lastProceededGroundTruth = tGroundTruth
 
-            # self.counter += 1
-            # print("Spectrogram: " + str(self.counter))
 
         return self.sliding_window.copy()

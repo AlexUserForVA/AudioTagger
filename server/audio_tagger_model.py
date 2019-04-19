@@ -1,4 +1,3 @@
-import time
 import wave
 import pyaudio
 import numpy as np
@@ -30,6 +29,7 @@ class MicrophoneThread(Thread):
                              frames_per_buffer=self.CHUNK_SIZE)
 
         while not self._stopevent.isSet():
+            print("Create tGroundTruth: " + str(self.model.tGroundTruth))
             chunk = stream.read(self.CHUNK_SIZE)
             self.model.putToSM(chunk)
             self.model.tGroundTruth += 1
@@ -46,27 +46,34 @@ class VisualisationThread(Thread):
 
     def __init__(self, model, name='VisualisationThread'):
         self.model = model
-        self.t = 0
         self._stopevent = Event()
         Thread.__init__(self, name=name)
-    '''
-    def run(self):
-        while not self._stopevent.isSet():
-            if len(self.model.sharedMemory) > self.t:
-                # print("Spectime: " + str(time.time()) + "GroundTruth: " + str(self.model.tGroundTruth))
-                spec = self.model.specProvider.computeSpectrogram(self.t)
-                self.t += 1
-                self.t = self.t % BUFFER_SIZE
-                if spec is not None:
-                    self.model.onNewSpectrogramCalculated(spec)
-    '''
+
     def run(self):
         while not self._stopevent.isSet():
             if len(self.model.sharedMemory) > 0:
-                # print("Spectime: " + str(time.time()) + "GroundTruth: " + str(self.model.tGroundTruth))
+                print("Consume tGroundTruth: " + str(self.model.tGroundTruth))
                 spec = self.model.specProvider.computeSpectrogram(self.model.tGroundTruth)
                 if spec is not None:
                     self.model.onNewSpectrogramCalculated(spec)
+
+    def join(self, timeout=None):
+        """ Stop the thread. """
+        self._stopevent.set()
+        Thread.join(self, timeout)
+
+
+class SlidingWindowThread(Thread):
+
+    def __init__(self, model, name='SlidingWindowThread'):
+        self.model = model
+        self._stopevent = Event()
+        Thread.__init__(self, name=name)
+
+    def run(self):
+        while not self._stopevent.isSet():
+            if len(self.model.sharedMemory) > 0:
+                self.model.predProvider.computeSpectrogram(self.model.tGroundTruth)
 
     def join(self, timeout=None):
         """ Stop the thread. """
@@ -82,8 +89,8 @@ class PredictionThread(Thread):
 
     def run(self):
         while not self._stopevent.isSet():
-            if len(self.model.sharedMemory) > 256:
-                probs = self.model.predProvider.predict(self.model.tGroundTruth)
+            if len(self.model.sharedMemory) > 0:
+                probs = self.model.predProvider.predict()
                 if probs is not None:
                     self.model.onNewPredictionCalculated(probs)
 
@@ -111,6 +118,7 @@ class AudioThread(Thread):
     def run(self):
         chunk = self.wf.readframes(self.CHUNK_SIZE)
         while not self._stopevent.isSet() and chunk != b'':
+            # print("Create tGroundTruth: " + str(self.model.tGroundTruth))
             self.stream.write(chunk)
             self.model.putToSM(chunk)
             self.model.tGroundTruth += 1
@@ -178,14 +186,18 @@ class AudioTaggerModel:
             self.producerThread = AudioThread(self, filePath)
 
         self.specThread = VisualisationThread(self)
+        self.slidingWindowThread = SlidingWindowThread(self)
         self.predThread = PredictionThread(self)
+
         self.producerThread.start()
         self.specThread.start()
+        self.slidingWindowThread.start()
         self.predThread.start()
 
     ############ Refresh function #############
     def refreshAudioTagger(self, settings):
         self.specThread.join()
+        self.slidingWindowThread.join()
         self.predThread.join()
         self.producerThread.join()
 
@@ -214,8 +226,15 @@ class AudioTaggerModel:
         self.specThread = VisualisationThread(self)
         self.specThread.start()
 
+        self.slidingWindowThread = SlidingWindowThread(self)
+        self.slidingWindowThread.start()
+
+
         self.predThread = PredictionThread(self)
         self.predThread.start()
 
     def putToSM(self, chunk):
-        self.sharedMemory.append(chunk)
+        if len(self.sharedMemory) < BUFFER_SIZE:
+            self.sharedMemory.append(chunk)
+        else:
+            self.sharedMemory[self.tGroundTruth] = chunk
