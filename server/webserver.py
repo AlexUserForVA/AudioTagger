@@ -8,25 +8,24 @@ from flask import Flask, Response, request
 
 from server.consumer.visualizers.spectrogram.madmom_spectrogram_provider import MadmomSpectrogramProvider
 from server.audio_tagger_manager import AudioTaggerManager
-from server.config.load_config import loadPredictors, loadSources
+from server.config.load_config import loadPredictors, loadAudiofiles
 from server.config.config import START_PREDICTOR
 
 ############### construct audio tagger model ####################
 
 ### load configs ###
-predList = loadPredictors()
-sourceList = loadSources()
+predictorList = loadPredictors()
+audiofileList = loadAudiofiles()
 
-# create signal provider
+visualisationProvider = MadmomSpectrogramProvider()
 
-specsProvider = MadmomSpectrogramProvider()
+# load prediction class via reflection
+predictionProviderClass = locate('server.consumer.predictors.{}'.format(predictorList[int(START_PREDICTOR)]['predictorClassPath']))
+predictionProvider = predictionProviderClass()
 
-predProviderClass = locate('server.consumer.predictors.{}'.format(predList[int(START_PREDICTOR)]['predictorClassPath']))
-predProvider = predProviderClass()
+model = AudioTaggerManager(visualisationProvider, predictionProvider, predictorList, audiofileList)
 
-model = AudioTaggerManager(specsProvider, predProvider, predList, sourceList)
-
-###### startup web server to provide audio tagger REST API ######
+###### audio tagger REST API functions ######
 app = Flask(__name__)
 
 @app.route('/live_spec', methods=['GET'])
@@ -97,6 +96,7 @@ def convertSpecToJPG(spec):
     _, curImage = cv2.imencode('.jpg', spec_bgr)
     return curImage.tobytes()
 
+# start webserver
 if __name__ == '__main__':
     app.run(host='127.0.0.1', debug=False)
 

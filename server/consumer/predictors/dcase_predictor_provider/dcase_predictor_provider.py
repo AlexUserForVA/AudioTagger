@@ -24,7 +24,7 @@ class SlidingWindowThread(Thread):
 
     def run(self):
         while not self._stopevent.isSet():
-            if len(self.provider.model.sharedMemory) > 0:
+            if len(self.provider.model.sharedMemory) > 0: # start consuming once the producer has started
                 self.provider.computeSpectrogram(self.provider.model.tGroundTruth)
 
     def join(self, timeout=None):
@@ -41,7 +41,7 @@ class PredictionThread(Thread):
 
     def run(self):
         while not self._stopevent.isSet():
-            if len(self.provider.model.sharedMemory) > 0:
+            if len(self.provider.model.sharedMemory) > 0:   # start consuming once the producer has started
                 probs = self.provider.predict()
                 self.provider.model.onNewPredictionCalculated(probs)
 
@@ -73,17 +73,18 @@ class DcasePredictorProvider(PredictorContract):
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
     def __init__(self):
+        # load model with its tuned weight parameters
         self.prediction_model = Net()
         self.prediction_model.load_state_dict(
-            torch.load(os.path.join(PROJECT_ROOT, 'server/consumer/predictors/dcase_predictor_provider/baseline_net.pt'),  map_location=lambda storage, location: storage))
+            torch.load(os.path.join(PROJECT_ROOT,
+                                    'server/consumer/predictors/dcase_predictor_provider/baseline_net.pt'),
+                       map_location=lambda storage, location: storage))
         self.prediction_model.to(self.device)
         self.prediction_model.eval()
 
+        # sliding window as cache
         self.sliding_window = np.zeros((128, 256), dtype=np.float32)
         self.lastProceededGroundTruth = None
-
-    def registerModel(self, model):
-        self.model = model
 
     def start(self):
         self.slidingWindowThread = SlidingWindowThread(self)
@@ -98,7 +99,7 @@ class DcasePredictorProvider(PredictorContract):
     def computeSpectrogram(self, tGroundTruth):
         # if thread faster than producer, do not consume same chunk multiple times
         if tGroundTruth != self.lastProceededGroundTruth:
-            frame = self.model.sharedMemory[(tGroundTruth - 1) % BUFFER_SIZE]
+            frame = self.model.sharedMemory[(tGroundTruth - 1) % BUFFER_SIZE]   # modulo avoids index under/overflow
             frame = np.fromstring(frame, np.int16)
             spectrogram = self.processorPipeline.process(frame)
 
@@ -115,7 +116,7 @@ class DcasePredictorProvider(PredictorContract):
     def predict(self):
         input = self.sliding_window[np.newaxis, np.newaxis]
         cuda_torch_input = torch.from_numpy(input).to(self.device)
-        model_output = self.prediction_model(cuda_torch_input)
+        model_output = self.prediction_model(cuda_torch_input)  # prediction by model
         softmax = nn.Softmax(dim=1)
         softmax_output = softmax(model_output)
         predicts = softmax_output.cpu().detach().numpy().flatten()

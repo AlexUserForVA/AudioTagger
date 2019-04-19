@@ -118,7 +118,7 @@ The next few steps show how to integrate a predictor into the backend system of 
 ```3. element```: positional argument (can be used to if special order of displayed classes is desired)  
 
 ### Adding audio files
-One can equip the backend with new selectable WAV files by editing the CSV-file [sources.csv](server/config/sources.csv).  
+One can equip the backend with new selectable WAV files by editing the CSV-file [sources.csv](server/config/audiofiles.csv).  
 The csv-file is of the following form:
 ```
 id;displayname;path  

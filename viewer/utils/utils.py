@@ -1,6 +1,5 @@
 import tkinter as tk
 
-
 def getScreenResolution():
     root = tk.Tk()
 

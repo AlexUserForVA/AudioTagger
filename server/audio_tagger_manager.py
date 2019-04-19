@@ -26,9 +26,9 @@ class MicrophoneThread(Thread):
 
         while not self._stopevent.isSet():
             chunk = stream.read(CHUNK_SIZE)
-            self.model.putToSM(chunk)
-            self.model.tGroundTruth += 1
-            self.model.tGroundTruth = self.model.tGroundTruth % BUFFER_SIZE
+            self.model.putToSM(chunk)   # insert new chunk into shared memory
+            self.model.tGroundTruth += 1    # increment global timestamp variable
+            self.model.tGroundTruth = self.model.tGroundTruth % BUFFER_SIZE # ring buffer implementation
 
     def join(self, timeout=None):
         self._stopevent.set()
@@ -53,9 +53,9 @@ class AudiofileThread(Thread):
         chunk = self.wf.readframes(CHUNK_SIZE)
         while not self._stopevent.isSet() and chunk != b'':
             self.stream.write(chunk)
-            self.model.putToSM(chunk)
-            self.model.tGroundTruth += 1
-            self.model.tGroundTruth = self.model.tGroundTruth % BUFFER_SIZE
+            self.model.putToSM(chunk)   # insert new chunk into shared memory
+            self.model.tGroundTruth += 1    # increment global timestamp variable
+            self.model.tGroundTruth = self.model.tGroundTruth % BUFFER_SIZE # ring buffer implementation
             chunk = self.wf.readframes(CHUNK_SIZE)
 
         self.stream.stop_stream()
@@ -74,19 +74,21 @@ class AudioTaggerManager:
         self.visProvider = specProvider
         self.predProvider = predProvider
 
-        # initialization
+        # initialization of visualization and prediction output
         self.liveSpec = np.zeros((128, 256), dtype=np.float32)
         self.livePred = [["Class{}".format(index), 0.2, index] for index in range(10)]
 
+        # consumers inform manager if an audio chunk is processed
         self.visProvider.registerModel(self)
         self.predProvider.registerModel(self)
 
+        # selectable audio files and predictors
         self.predList = predList
         self.sourceList = sourceList
 
         self.sharedMemory = deque(maxlen=BUFFER_SIZE)
 
-        self.tGroundTruth = 0
+        self.tGroundTruth = 0   # global timestamp to keep up synchronization of consumers
 
         self.startThreads()
 
@@ -113,6 +115,7 @@ class AudioTaggerManager:
 
     def startThreads(self):
 
+        # decide if audio input comes from microphone or file
         if START_FILE == None:
             self.producerThread = MicrophoneThread(self)
         else:
@@ -129,7 +132,7 @@ class AudioTaggerManager:
     # This function is called when the frontend
     # changes audio mode, file or predictor
     def refreshAudioTagger(self, settings):
-        # stop current threads
+        # stop producer and consumers
         self.producerThread.join()
 
         self.visProvider.stop()
@@ -139,23 +142,26 @@ class AudioTaggerManager:
         self.tGroundTruth = 0
         self.sharedMemory.clear()
 
-        # Restart audio tagger with delivered settings
+        # restart audio tagger with delivered settings
         isLive = settings['isLive']
         file = settings['file']
         predictor = settings['predictor']
 
+        # decide if audio input comes from microphone or file
         if isLive:
             self.producerThread = MicrophoneThread(self)
         else:
             filePath = [elem['path'] for elem in self.getSourceList() if elem['id'] == file][0]
             self.producerThread = AudiofileThread(self, filePath)
 
+        # load selected prediction class via reflection, update references for the new predictor object
         predictorClassPath = [elem['predictorClassPath'] for elem in self.getPredList() if elem['id'] == predictor][0]
         predProviderClass = locate('server.consumer.predictors.{}'.format(predictorClassPath))
         newPredProvider = predProviderClass()
         self.setPredProvider(newPredProvider)
         self.predProvider.registerModel(self)
 
+        # restart producer and consumers
         self.producerThread.start()
 
         self.visProvider.start()

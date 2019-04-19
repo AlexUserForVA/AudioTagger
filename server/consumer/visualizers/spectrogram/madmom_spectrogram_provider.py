@@ -20,7 +20,7 @@ class VisualisationThread(Thread):
 
     def run(self):
         while not self._stopevent.isSet():
-            if len(self.provider.model.sharedMemory) > 0:
+            if len(self.provider.model.sharedMemory) > 0: # start consuming once the producer has started
                 spec = self.provider.computeSpectrogram(self.provider.model.tGroundTruth)
                 self.provider.model.onNewSpectrogramCalculated(spec)
 
@@ -31,6 +31,7 @@ class VisualisationThread(Thread):
 
 class MadmomSpectrogramProvider(VisualisationContract):
 
+    # madmom pipeline for spectrogram calculation
     sig_proc = SignalProcessor(num_channels=1, sample_rate=32000, norm=True)
     fsig_proc = FramedSignalProcessor(frame_size=1024, hop_size=128, origin='future')
     spec_proc = SpectrogramProcessor(frame_size=1024)
@@ -38,6 +39,7 @@ class MadmomSpectrogramProvider(VisualisationContract):
     processorPipeline = SequentialProcessor([sig_proc, fsig_proc, spec_proc, filt_proc])
 
     def __init__(self):
+        # sliding window as cache
         self.sliding_window = np.zeros((128, 256), dtype=np.float32)
         self.lastProceededGroundTruth = None
 
@@ -48,16 +50,13 @@ class MadmomSpectrogramProvider(VisualisationContract):
     def stop(self):
         self.visThread.join()
 
-    def registerModel(self, model):
-        self.model = model
-
     def computeSpectrogram(self, tGroundTruth):
+        # if thread faster than producer, do not consume same chunk multiple times
         if tGroundTruth != self.lastProceededGroundTruth:
-            frame = self.model.sharedMemory[(tGroundTruth - 1) % BUFFER_SIZE]
+            frame = self.model.sharedMemory[(tGroundTruth - 1) % BUFFER_SIZE]   # modulo avoids index under/overflow
             frame = np.fromstring(frame, np.int16)
             spectrogram = self.processorPipeline.process(frame)
 
-            # check if there is audio content
             frame = spectrogram[0]
             if np.any(np.isnan(frame)):
                 frame = np.zeros_like(frame, dtype=np.float32)

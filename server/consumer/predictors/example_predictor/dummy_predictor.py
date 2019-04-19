@@ -13,10 +13,9 @@ class PredictionThread(Thread):
 
     def run(self):
         while not self._stopevent.isSet():
-            if len(self.provider.model.sharedMemory) > 0:
+            if len(self.provider.model.sharedMemory) > 0:   # start consuming once the producer has started
                 probs = self.provider.model.predProvider.predict()
-                if probs is not None:
-                    self.provider.model.onNewPredictionCalculated(probs)
+                self.provider.model.onNewPredictionCalculated(probs)
 
     def join(self, timeout=None):
         """ Stop the thread. """
@@ -24,9 +23,6 @@ class PredictionThread(Thread):
         Thread.join(self, timeout)
 
 class DummyPredictor(PredictorContract):
-
-    def registerModel(self, model):
-        self.model = model
 
     def start(self):
         self.predThread = PredictionThread(self)
@@ -36,5 +32,6 @@ class DummyPredictor(PredictorContract):
         self.predThread.join()
 
     def predict(self):
+        # dummy predictor
         probs = [[elem, random.uniform(0, 1), index] for index, elem in enumerate(["Class 1", "Class 2", "Class 3"])]
         return probs

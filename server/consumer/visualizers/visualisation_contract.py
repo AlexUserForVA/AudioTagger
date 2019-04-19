@@ -1,5 +1,8 @@
 class VisualisationContract:
 
+    def registerModel(self, model):
+        self.model = model
+
     def start(self):
         raise NotImplementedError
 
