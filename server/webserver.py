@@ -7,7 +7,7 @@ from pydoc import locate
 from flask import Flask, Response, request
 
 from server.consumer.visualizers.spectrogram.madmom_spectrogram_provider import MadmomSpectrogramProvider
-from server.audio_tagger_model import AudioTaggerModel
+from server.audio_tagger_manager import AudioTaggerManager
 from server.config.load_config import loadPredictors, loadSources
 from server.config.config import START_PREDICTOR
 
@@ -24,7 +24,7 @@ specsProvider = MadmomSpectrogramProvider()
 predProviderClass = locate('server.consumer.predictors.{}'.format(predList[int(START_PREDICTOR)]['predictorClassPath']))
 predProvider = predProviderClass()
 
-model = AudioTaggerModel(specsProvider, predProvider, predList, sourceList)
+model = AudioTaggerManager(specsProvider, predProvider, predList, sourceList)
 
 ###### startup web server to provide audio tagger REST API ######
 app = Flask(__name__)

@@ -1,8 +1,9 @@
 import os
-import time
 import torch
 import torch.nn as nn
 import numpy as np
+
+from threading import Thread, Event
 
 from madmom.audio.signal import SignalProcessor, FramedSignalProcessor
 from madmom.audio.spectrogram import SpectrogramProcessor, LogarithmicFilteredSpectrogramProcessor
@@ -10,12 +11,48 @@ from madmom.audio.filters import LogFilterbank
 from madmom.processors import SequentialProcessor
 
 from server.config.config import PROJECT_ROOT, BUFFER_SIZE
-from server.consumer.predictors.i_predictor import IPredictor
+from server.consumer.predictors.predictor_contract import PredictorContract
 from server.consumer.predictors.dcase_predictor_provider.baseline_net import Net
 
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
-class DcasePredictorProvider(IPredictor):
 
+class SlidingWindowThread(Thread):
+
+    def __init__(self, provider, name='SlidingWindowThread'):
+        self.provider = provider
+        self._stopevent = Event()
+        Thread.__init__(self, name=name)
+
+    def run(self):
+        while not self._stopevent.isSet():
+            if len(self.provider.model.sharedMemory) > 0:
+                self.provider.computeSpectrogram(self.provider.model.tGroundTruth)
+
+    def join(self, timeout=None):
+        self._stopevent.set()
+        Thread.join(self, timeout)
+
+
+class PredictionThread(Thread):
+
+    def __init__(self, provider, name='PredictionThread'):
+        self.provider = provider
+        self._stopevent = Event()
+        Thread.__init__(self, name=name)
+
+    def run(self):
+        while not self._stopevent.isSet():
+            if len(self.provider.model.sharedMemory) > 0:
+                probs = self.provider.predict()
+                self.provider.model.onNewPredictionCalculated(probs)
+
+    def join(self, timeout=None):
+        self._stopevent.set()
+        Thread.join(self, timeout)
+
+
+class DcasePredictorProvider(PredictorContract):
+
+    # madmom pipeline for spectrogram calculation
     sig_proc = SignalProcessor(num_channels=1, sample_rate=32000, norm=True)
     fsig_proc = FramedSignalProcessor(frame_size=1024, hop_size=128, origin='future')
     spec_proc = SpectrogramProcessor(frame_size=1024)
@@ -33,11 +70,13 @@ class DcasePredictorProvider(IPredictor):
                "Violin_or_fiddle",
                "Writing"]
 
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+
     def __init__(self):
         self.prediction_model = Net()
         self.prediction_model.load_state_dict(
             torch.load(os.path.join(PROJECT_ROOT, 'server/consumer/predictors/dcase_predictor_provider/baseline_net.pt'),  map_location=lambda storage, location: storage))
-        self.prediction_model.to(device)
+        self.prediction_model.to(self.device)
         self.prediction_model.eval()
 
         self.sliding_window = np.zeros((128, 256), dtype=np.float32)
@@ -46,13 +85,23 @@ class DcasePredictorProvider(IPredictor):
     def registerModel(self, model):
         self.model = model
 
+    def start(self):
+        self.slidingWindowThread = SlidingWindowThread(self)
+        self.predictionThread = PredictionThread(self)
+        self.slidingWindowThread.start()
+        self.predictionThread.start()
+
+    def stop(self):
+        self.slidingWindowThread.join()
+        self.predictionThread.join()
+
     def computeSpectrogram(self, tGroundTruth):
-        # print(time.time())
+        # if thread faster than producer, do not consume same chunk multiple times
         if tGroundTruth != self.lastProceededGroundTruth:
             frame = self.model.sharedMemory[(tGroundTruth - 1) % BUFFER_SIZE]
             frame = np.fromstring(frame, np.int16)
             spectrogram = self.processorPipeline.process(frame)
-            # check if there is audio content
+
             frame = spectrogram[0]
             if np.any(np.isnan(frame)):
                 frame = np.zeros_like(frame, dtype=np.float32)
@@ -65,7 +114,7 @@ class DcasePredictorProvider(IPredictor):
 
     def predict(self):
         input = self.sliding_window[np.newaxis, np.newaxis]
-        cuda_torch_input = torch.from_numpy(input).to(device)
+        cuda_torch_input = torch.from_numpy(input).to(self.device)
         model_output = self.prediction_model(cuda_torch_input)
         softmax = nn.Softmax(dim=1)
         softmax_output = softmax(model_output)

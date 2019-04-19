@@ -1,4 +1,3 @@
 id;displayname;classes;description;predictorClassPath
 0;DCASEPredictor;41;sample description for dcase;dcase_predictor_provider.dcase_predictor_provider.DcasePredictorProvider
-1;SportsPredictor;3;sample description for detecting sports;test_predictor.test_predictor_provider.TestPredictorProvider
-2;ExamplePredictor;3;sample description;example_predictor.dummy_predictor.DummyPredictor
+1;ExamplePredictor;3;sample description;example_predictor.dummy_predictor.DummyPredictor

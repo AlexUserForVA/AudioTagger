@@ -6,14 +6,10 @@ from collections import deque
 from pydoc import locate
 from threading import Thread, Event
 
-# from server.producer.pyaudio_producer import MicrophoneThread, FileThread
+from server.config.config import BUFFER_SIZE, START_FILE, CHUNK_SIZE, SAMPLE_RATE, N_CHANNELS
 
-from server.config.config import BUFFER_SIZE, START_FILE
 
 class MicrophoneThread(Thread):
-
-    CHUNK_SIZE = 1024
-    SAMPLE_RATE = 32000
 
     def __init__(self, model, name='MicrophoneThread'):
         self.p = pyaudio.PyAudio()
@@ -23,92 +19,30 @@ class MicrophoneThread(Thread):
 
     def run(self):
         stream = self.p.open(format=pyaudio.paInt16,
-                             channels=1,
-                             rate=self.SAMPLE_RATE,
+                             channels=N_CHANNELS,
+                             rate=SAMPLE_RATE,
                              input=True,
-                             frames_per_buffer=self.CHUNK_SIZE)
+                             frames_per_buffer=CHUNK_SIZE)
 
         while not self._stopevent.isSet():
-            print("Create tGroundTruth: " + str(self.model.tGroundTruth))
-            chunk = stream.read(self.CHUNK_SIZE)
+            chunk = stream.read(CHUNK_SIZE)
             self.model.putToSM(chunk)
             self.model.tGroundTruth += 1
             self.model.tGroundTruth = self.model.tGroundTruth % BUFFER_SIZE
 
-
     def join(self, timeout=None):
-        """ Stop the thread. """
         self._stopevent.set()
         Thread.join(self, timeout)
 
 
-class VisualisationThread(Thread):
+class AudiofileThread(Thread):
 
-    def __init__(self, model, name='VisualisationThread'):
-        self.model = model
-        self._stopevent = Event()
-        Thread.__init__(self, name=name)
-
-    def run(self):
-        while not self._stopevent.isSet():
-            if len(self.model.sharedMemory) > 0:
-                print("Consume tGroundTruth: " + str(self.model.tGroundTruth))
-                spec = self.model.specProvider.computeSpectrogram(self.model.tGroundTruth)
-                if spec is not None:
-                    self.model.onNewSpectrogramCalculated(spec)
-
-    def join(self, timeout=None):
-        """ Stop the thread. """
-        self._stopevent.set()
-        Thread.join(self, timeout)
-
-
-class SlidingWindowThread(Thread):
-
-    def __init__(self, model, name='SlidingWindowThread'):
-        self.model = model
-        self._stopevent = Event()
-        Thread.__init__(self, name=name)
-
-    def run(self):
-        while not self._stopevent.isSet():
-            if len(self.model.sharedMemory) > 0:
-                self.model.predProvider.computeSpectrogram(self.model.tGroundTruth)
-
-    def join(self, timeout=None):
-        """ Stop the thread. """
-        self._stopevent.set()
-        Thread.join(self, timeout)
-
-class PredictionThread(Thread):
-
-    def __init__(self, model, name='PredictionThread'):
-        self.model = model
-        self._stopevent = Event()
-        Thread.__init__(self, name=name)
-
-    def run(self):
-        while not self._stopevent.isSet():
-            if len(self.model.sharedMemory) > 0:
-                probs = self.model.predProvider.predict()
-                if probs is not None:
-                    self.model.onNewPredictionCalculated(probs)
-
-    def join(self, timeout=None):
-        """ Stop the thread. """
-        self._stopevent.set()
-        Thread.join(self, timeout)
-
-class AudioThread(Thread):
-
-    CHUNK_SIZE = 1024
-
-    def __init__(self, model, filePath, name='AudioThread'):
+    def __init__(self, model, filePath, name='AudiofileThread'):
         self.p = pyaudio.PyAudio()
         self.wf = wave.open(filePath, 'rb')
         self.stream = self.p.open(format=pyaudio.paInt16,
-                channels=1,
-                rate=32000,
+                channels=N_CHANNELS,
+                rate=SAMPLE_RATE,
                 output=True)
 
         self.model = model
@@ -116,14 +50,13 @@ class AudioThread(Thread):
         Thread.__init__(self, name=name)
 
     def run(self):
-        chunk = self.wf.readframes(self.CHUNK_SIZE)
+        chunk = self.wf.readframes(CHUNK_SIZE)
         while not self._stopevent.isSet() and chunk != b'':
-            # print("Create tGroundTruth: " + str(self.model.tGroundTruth))
             self.stream.write(chunk)
             self.model.putToSM(chunk)
             self.model.tGroundTruth += 1
             self.model.tGroundTruth = self.model.tGroundTruth % BUFFER_SIZE
-            chunk = self.wf.readframes(self.CHUNK_SIZE)
+            chunk = self.wf.readframes(CHUNK_SIZE)
 
         self.stream.stop_stream()
         self.stream.close()
@@ -131,21 +64,21 @@ class AudioThread(Thread):
         self.p.terminate()
 
     def join(self, timeout=None):
-        """ Stop the thread. """
         self._stopevent.set()
         Thread.join(self, timeout)
 
-class AudioTaggerModel:
+
+class AudioTaggerManager:
 
     def __init__(self, specProvider, predProvider, predList, sourceList):
-        self.specProvider = specProvider
+        self.visProvider = specProvider
         self.predProvider = predProvider
 
         # initialization
         self.liveSpec = np.zeros((128, 256), dtype=np.float32)
         self.livePred = [["Class{}".format(index), 0.2, index] for index in range(10)]
 
-        self.specProvider.registerModel(self)
+        self.visProvider.registerModel(self)
         self.predProvider.registerModel(self)
 
         self.predList = predList
@@ -179,29 +112,32 @@ class AudioTaggerModel:
         self.livePred = prob_dict
 
     def startThreads(self):
+
         if START_FILE == None:
             self.producerThread = MicrophoneThread(self)
         else:
             filePath = [elem['path'] for elem in self.getSourceList() if elem['id'] == START_FILE][0]
-            self.producerThread = AudioThread(self, filePath)
-
-        self.specThread = VisualisationThread(self)
-        self.slidingWindowThread = SlidingWindowThread(self)
-        self.predThread = PredictionThread(self)
+            self.producerThread = AudiofileThread(self, filePath)
 
         self.producerThread.start()
-        self.specThread.start()
-        self.slidingWindowThread.start()
-        self.predThread.start()
+
+        # start consumers
+        self.visProvider.start()
+        self.predProvider.start()
 
     ############ Refresh function #############
+    # This function is called when the frontend
+    # changes audio mode, file or predictor
     def refreshAudioTagger(self, settings):
-        self.specThread.join()
-        self.slidingWindowThread.join()
-        self.predThread.join()
+        # stop current threads
         self.producerThread.join()
 
+        self.visProvider.stop()
+        self.predProvider.stop()
+
+        # reset ring buffer
         self.tGroundTruth = 0
+        self.sharedMemory.clear()
 
         # Restart audio tagger with delivered settings
         isLive = settings['isLive']
@@ -212,7 +148,7 @@ class AudioTaggerModel:
             self.producerThread = MicrophoneThread(self)
         else:
             filePath = [elem['path'] for elem in self.getSourceList() if elem['id'] == file][0]
-            self.producerThread = AudioThread(self, filePath)
+            self.producerThread = AudiofileThread(self, filePath)
 
         predictorClassPath = [elem['predictorClassPath'] for elem in self.getPredList() if elem['id'] == predictor][0]
         predProviderClass = locate('server.consumer.predictors.{}'.format(predictorClassPath))
@@ -220,18 +156,10 @@ class AudioTaggerModel:
         self.setPredProvider(newPredProvider)
         self.predProvider.registerModel(self)
 
-        self.sharedMemory.clear()
-
         self.producerThread.start()
-        self.specThread = VisualisationThread(self)
-        self.specThread.start()
 
-        self.slidingWindowThread = SlidingWindowThread(self)
-        self.slidingWindowThread.start()
-
-
-        self.predThread = PredictionThread(self)
-        self.predThread.start()
+        self.visProvider.start()
+        self.predProvider.start()
 
     def putToSM(self, chunk):
         if len(self.sharedMemory) < BUFFER_SIZE:

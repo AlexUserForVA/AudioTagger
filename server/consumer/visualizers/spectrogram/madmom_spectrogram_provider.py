@@ -1,16 +1,35 @@
-import time
 import numpy as np
+
+from threading import Thread, Event
 
 from madmom.audio.signal import SignalProcessor, FramedSignalProcessor
 from madmom.audio.spectrogram import SpectrogramProcessor, LogarithmicFilteredSpectrogramProcessor
 from madmom.audio.filters import LogFilterbank
-from madmom.processors import SequentialProcessor, Processor
+from madmom.processors import SequentialProcessor
 
 from server.config.config import BUFFER_SIZE
-from server.consumer.visualizers.i_visualizer import IVisualizer
+from server.consumer.visualizers.visualisation_contract import VisualisationContract
 
 
-class MadmomSpectrogramProvider(IVisualizer):
+class VisualisationThread(Thread):
+
+    def __init__(self, provider, name='VisualisationThread'):
+        self.provider = provider
+        self._stopevent = Event()
+        Thread.__init__(self, name=name)
+
+    def run(self):
+        while not self._stopevent.isSet():
+            if len(self.provider.model.sharedMemory) > 0:
+                spec = self.provider.computeSpectrogram(self.provider.model.tGroundTruth)
+                self.provider.model.onNewSpectrogramCalculated(spec)
+
+    def join(self, timeout=None):
+        self._stopevent.set()
+        Thread.join(self, timeout)
+
+
+class MadmomSpectrogramProvider(VisualisationContract):
 
     sig_proc = SignalProcessor(num_channels=1, sample_rate=32000, norm=True)
     fsig_proc = FramedSignalProcessor(frame_size=1024, hop_size=128, origin='future')
@@ -21,6 +40,13 @@ class MadmomSpectrogramProvider(IVisualizer):
     def __init__(self):
         self.sliding_window = np.zeros((128, 256), dtype=np.float32)
         self.lastProceededGroundTruth = None
+
+    def start(self):
+        self.visThread = VisualisationThread(self)
+        self.visThread.start()
+
+    def stop(self):
+        self.visThread.join()
 
     def registerModel(self, model):
         self.model = model
@@ -41,6 +67,5 @@ class MadmomSpectrogramProvider(IVisualizer):
             self.sliding_window[:, -1] = frame
 
             self.lastProceededGroundTruth = tGroundTruth
-
 
         return self.sliding_window.copy()
