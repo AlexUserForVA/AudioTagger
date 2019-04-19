@@ -17,8 +17,8 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 class DcasePredictorProvider(IPredictor):
 
     sig_proc = SignalProcessor(num_channels=1, sample_rate=32000, norm=True)
-    fsig_proc = FramedSignalProcessor(frame_size=1024, hop_size=128, origin='future')
-    spec_proc = SpectrogramProcessor(frame_size=1024)
+    fsig_proc = FramedSignalProcessor(frame_size=512, hop_size=128, origin='future')
+    spec_proc = SpectrogramProcessor(frame_size=512)
     filt_proc = LogarithmicFilteredSpectrogramProcessor(filterbank=LogFilterbank, num_bands=26, fmin=20, fmax=14000)
     processorPipeline = SequentialProcessor([sig_proc, fsig_proc, spec_proc, filt_proc])
 
@@ -40,7 +40,7 @@ class DcasePredictorProvider(IPredictor):
         self.prediction_model.to(device)
         self.prediction_model.eval()
 
-        self.window = np.zeros((128, 256), dtype=np.float32)
+        self.window = np.zeros((103, 256), dtype=np.float32)
 
     def registerModel(self, model):
         self.model = model

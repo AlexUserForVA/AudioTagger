@@ -13,7 +13,7 @@ from server.config.config import BUFFER_SIZE, START_FILE
 
 class MicrophoneThread(Thread):
 
-    CHUNK_SIZE = 1024
+    CHUNK_SIZE = 512
     SAMPLE_RATE = 32000
 
     def __init__(self, model, name='MicrophoneThread'):
@@ -94,7 +94,7 @@ class PredictionThread(Thread):
 
 class AudioThread(Thread):
 
-    CHUNK_SIZE = 1024
+    CHUNK_SIZE = 512
 
     def __init__(self, model, filePath, name='AudioThread'):
         self.p = pyaudio.PyAudio()
@@ -134,7 +134,7 @@ class AudioTaggerModel:
         self.predProvider = predProvider
 
         # initialization
-        self.liveSpec = np.zeros((128, 256), dtype=np.float32)
+        self.liveSpec = np.zeros((103, 256), dtype=np.float32)
         self.livePred = [["Class{}".format(index), 0.2, index] for index in range(10)]
 
         self.specProvider.registerModel(self)
