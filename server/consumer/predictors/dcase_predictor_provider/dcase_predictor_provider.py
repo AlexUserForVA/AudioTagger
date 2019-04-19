@@ -1,4 +1,5 @@
 import os
+import time
 import torch
 import torch.nn as nn
 import numpy as np
@@ -8,7 +9,7 @@ from madmom.audio.spectrogram import SpectrogramProcessor, LogarithmicFilteredSp
 from madmom.audio.filters import LogFilterbank
 from madmom.processors import SequentialProcessor
 
-from server.config.config import PROJECT_ROOT
+from server.config.config import PROJECT_ROOT, BUFFER_SIZE
 from server.consumer.predictors.i_predictor import IPredictor
 from server.consumer.predictors.dcase_predictor_provider.baseline_net import Net
 
@@ -16,8 +17,8 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 class DcasePredictorProvider(IPredictor):
 
     sig_proc = SignalProcessor(num_channels=1, sample_rate=32000, norm=True)
-    fsig_proc = FramedSignalProcessor(frame_size=512, hop_size=128, origin='future')
-    spec_proc = SpectrogramProcessor(frame_size=512)
+    fsig_proc = FramedSignalProcessor(frame_size=1024, hop_size=128, origin='future')
+    spec_proc = SpectrogramProcessor(frame_size=1024)
     filt_proc = LogarithmicFilteredSpectrogramProcessor(filterbank=LogFilterbank, num_bands=26, fmin=20, fmax=14000)
     processorPipeline = SequentialProcessor([sig_proc, fsig_proc, spec_proc, filt_proc])
 
@@ -39,32 +40,35 @@ class DcasePredictorProvider(IPredictor):
         self.prediction_model.to(device)
         self.prediction_model.eval()
 
-        self.sliding_window = np.zeros((128, 256), dtype=np.float32)
+        self.window = np.zeros((128, 256), dtype=np.float32)
 
     def registerModel(self, model):
         self.model = model
 
-    def predict(self, t):
-        frame = self.model.sharedMemory[t]
-        frame = np.fromstring(frame, np.int16)
-        spectrogram = self.processorPipeline.process(frame)
+    def predict(self, tGroundTruth):
+        # print("Prediction started: " + str(time.time()))
+        for i in range(256):
+            ringBufferIndex = (tGroundTruth - i - 1) % BUFFER_SIZE
+            frame = self.model.sharedMemory[ringBufferIndex]
 
-        # check if there is audio content
-        frame = spectrogram[0]
-        if np.any(np.isnan(frame)):
-            frame = np.zeros_like(frame, dtype=np.float32)
+            frame = np.fromstring(frame, np.int16)
+            spectrogram = self.processorPipeline.process(frame)
 
-        # update sliding window
-        self.sliding_window[:, 0:-1] = self.sliding_window[:, 1::]
-        self.sliding_window[:, -1] = frame
+            # check if there is audio content
+            frame = spectrogram[0]
+            if np.any(np.isnan(frame)):
+                frame = np.zeros_like(frame, dtype=np.float32)
 
-        if t % 50 == 0:
-            input = self.sliding_window[np.newaxis, np.newaxis]
-            cuda_torch_input = torch.from_numpy(input).to(device)
-            model_output = self.prediction_model(cuda_torch_input)
-            softmax = nn.Softmax(dim=1)
-            softmax_output = softmax(model_output)
-            predicts = softmax_output.cpu().detach().numpy().flatten()
-            probs = [[elem, predicts[index].item(), index] for index, elem in enumerate(self.classes)]
-
-            return probs
+            # update sliding window
+            self.window[:, 0:-1] = self.window[:, 1::]
+            self.window[:, -1] = frame
+        # print("Spectrogram calculated: " +  str(time.time()))
+        input = self.window[np.newaxis, np.newaxis]
+        cuda_torch_input = torch.from_numpy(input).to(device)
+        model_output = self.prediction_model(cuda_torch_input)
+        softmax = nn.Softmax(dim=1)
+        softmax_output = softmax(model_output)
+        predicts = softmax_output.cpu().detach().numpy().flatten()
+        probs = [[elem, predicts[index].item(), index] for index, elem in enumerate(self.classes)]
+        # print("Prediction finished: " +  str(time.time()))
+        return probs

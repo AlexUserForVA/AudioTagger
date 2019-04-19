@@ -13,7 +13,7 @@ from server.config.config import BUFFER_SIZE, START_FILE
 
 class MicrophoneThread(Thread):
 
-    CHUNK_SIZE = 256
+    CHUNK_SIZE = 1024
     SAMPLE_RATE = 32000
 
     def __init__(self, model, name='MicrophoneThread'):
@@ -32,6 +32,8 @@ class MicrophoneThread(Thread):
         while not self._stopevent.isSet():
             chunk = stream.read(self.CHUNK_SIZE)
             self.model.putToSM(chunk)
+            self.model.tGroundTruth += 1
+            self.model.tGroundTruth = self.model.tGroundTruth % BUFFER_SIZE
 
 
     def join(self, timeout=None):
@@ -43,17 +45,26 @@ class MicrophoneThread(Thread):
 class VisualisationThread(Thread):
 
     def __init__(self, model, name='VisualisationThread'):
-        self.t = 0
         self.model = model
+        self.t = 0
         self._stopevent = Event()
         Thread.__init__(self, name=name)
-
+    '''
     def run(self):
         while not self._stopevent.isSet():
             if len(self.model.sharedMemory) > self.t:
+                # print("Spectime: " + str(time.time()) + "GroundTruth: " + str(self.model.tGroundTruth))
                 spec = self.model.specProvider.computeSpectrogram(self.t)
                 self.t += 1
-                self.t %= BUFFER_SIZE
+                self.t = self.t % BUFFER_SIZE
+                if spec is not None:
+                    self.model.onNewSpectrogramCalculated(spec)
+    '''
+    def run(self):
+        while not self._stopevent.isSet():
+            if len(self.model.sharedMemory) > 0:
+                # print("Spectime: " + str(time.time()) + "GroundTruth: " + str(self.model.tGroundTruth))
+                spec = self.model.specProvider.computeSpectrogram(self.model.tGroundTruth)
                 if spec is not None:
                     self.model.onNewSpectrogramCalculated(spec)
 
@@ -65,17 +76,14 @@ class VisualisationThread(Thread):
 class PredictionThread(Thread):
 
     def __init__(self, model, name='PredictionThread'):
-        self.t = 0
         self.model = model
         self._stopevent = Event()
         Thread.__init__(self, name=name)
 
     def run(self):
         while not self._stopevent.isSet():
-            if len(self.model.sharedMemory) > self.t:
-                probs = self.model.predProvider.predict(self.t)
-                self.t += 1
-                self.t = self.t % BUFFER_SIZE
+            if len(self.model.sharedMemory) > 256:
+                probs = self.model.predProvider.predict(self.model.tGroundTruth)
                 if probs is not None:
                     self.model.onNewPredictionCalculated(probs)
 
@@ -86,7 +94,7 @@ class PredictionThread(Thread):
 
 class AudioThread(Thread):
 
-    CHUNK_SIZE = 256
+    CHUNK_SIZE = 1024
 
     def __init__(self, model, filePath, name='AudioThread'):
         self.p = pyaudio.PyAudio()
@@ -126,7 +134,7 @@ class AudioTaggerModel:
         self.predProvider = predProvider
 
         # initialization
-        self.liveSpec = np.zeros((103, 256), dtype=np.float32)
+        self.liveSpec = np.zeros((128, 256), dtype=np.float32)
         self.livePred = [["Class{}".format(index), 0.2, index] for index in range(10)]
 
         self.specProvider.registerModel(self)
@@ -170,19 +178,17 @@ class AudioTaggerModel:
             self.producerThread = AudioThread(self, filePath)
 
         self.specThread = VisualisationThread(self)
-        # self.predThread = PredictionThread(self)
+        self.predThread = PredictionThread(self)
         self.producerThread.start()
         self.specThread.start()
-        # self.predThread.start()
+        self.predThread.start()
 
     ############ Refresh function #############
     def refreshAudioTagger(self, settings):
-        # self.audioThread.join()
         self.specThread.join()
-        # self.predThread.join()
+        self.predThread.join()
         self.producerThread.join()
 
-        self.nextSlot = 0
         self.tGroundTruth = 0
 
         # Restart audio tagger with delivered settings
@@ -208,8 +214,8 @@ class AudioTaggerModel:
         self.specThread = VisualisationThread(self)
         self.specThread.start()
 
-        # self.predThread = PredictionThread(self)
-        # self.predThread.start()
+        self.predThread = PredictionThread(self)
+        self.predThread.start()
 
     def putToSM(self, chunk):
         self.sharedMemory.append(chunk)
