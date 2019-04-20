@@ -14,19 +14,7 @@ Use Python 3 and Anaconda in order to get the code running for guarantee!
 Version used during development: ```3.6.7```
 
 1. ```python setup.py develop```
-
-2. For GUI components the Python Kivy Framework is required. [See here](https://kivy.org/doc/stable/installation/installation-linux.html) for further installation details.
-
-3. required pip packages  
-        * opencv-python  
-        * matplotlib  
-        * Flask  
-        * Cython  
-        * madmom  
-        * torchvision  
-        * pyaudio  
-        * requests  
-        * kivy  
+2. Execute conda environment.yaml
 
 ## Usage
 The current predictions and spectrograms can be accessed via a REST interface.
