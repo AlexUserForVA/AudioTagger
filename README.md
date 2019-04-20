@@ -21,7 +21,8 @@ The figure below should give a basic understanding of the information flow and t
 the running backend system:
 
 TODO
-
+## Configuration file
+The file [config.py](server/config/config.py) includes some options which can be set before backend startup. Before the backend can be started, please set the variable ```PROJECT_ROOT``` to the absolute path of the projects root directory.
 ## Usage
 The current predictions and spectrograms can be accessed via a REST interface.
 Following command starts the backend: 
