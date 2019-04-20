@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9015c207-3912-40b0-9892-7d06d89d8353" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/environment.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="9015c207-3912-40b0-9892-7d06d89d8353" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/spectrogram/madmom_spectrogram_provider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
+            <state relative-caret-position="-450">
+              <caret line="18" column="97" selection-start-line="18" selection-start-column="97" selection-end-line="18" selection-end-column="97" />
             </state>
           </provider>
         </entry>
@@ -81,16 +78,25 @@
         <entry file="file://$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/dcase_predictor_provider.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="295">
-              <caret line="140" column="70" lean-forward="true" selection-start-line="140" selection-start-column="70" selection-end-line="140" selection-end-column="70" />
+              <caret line="140" column="70" selection-start-line="140" selection-start-column="70" selection-end-line="140" selection-end-column="70" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/environment.yaml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="14" column="15" lean-forward="true" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+              <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/visualisation_contract.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="387">
+              <caret line="48" column="54" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -196,6 +202,32 @@
               <item name="AudioTagger" type="b2602c69:ProjectViewProjectNode" />
               <item name="AudioTagger" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="AudioTagger" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioTagger" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioTagger" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioTagger" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioTagger" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioTagger" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="visualizers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioTagger" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioTagger" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="visualizers" type="462c0819:PsiDirectoryNode" />
+              <item name="spectrogram" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -240,7 +272,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.startup">
+  <component name="RunManager" selected="Python.webserver">
     <configuration name="AudioTagger" type="PythonConfigurationType" factoryName="Python">
       <module name="DI_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -463,8 +495,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.startup" />
         <item itemvalue="Python.webserver" />
+        <item itemvalue="Python.startup" />
         <item itemvalue="Python.setup" />
         <item itemvalue="Python.audiotaggermodel" />
         <item itemvalue="Python.mainApp (1)" />
@@ -541,7 +573,7 @@
       <workItem from="1555618254481" duration="1587000" />
       <workItem from="1555656726537" duration="2669000" />
       <workItem from="1555703084420" duration="3420000" />
-      <workItem from="1555786251125" duration="9433000" />
+      <workItem from="1555786251125" duration="9753000" />
     </task>
     <task id="LOCAL-00001" summary="Added controller class, instantiate mvc components in startup">
       <created>1553337402631</created>
@@ -732,11 +764,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555793805132</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="add environment.yaml file">
+      <created>1555796492658</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1555796492658</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="438866000" />
+    <option name="totallyTimeSpent" value="439186000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -749,7 +788,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49568033" visible="true" weight="0.15550636" />
       <window_info id="Structure" order="1" sideWeight="0.50431967" side_tool="true" weight="0.22800222" />
@@ -766,8 +804,8 @@
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32721382" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5002767" side_tool="true" weight="0.2526998" />
-      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.32829374" />
-      <window_info anchor="bottom" id="Python Console" order="13" sideWeight="0.4997233" weight="0.2526998" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32829374" />
+      <window_info anchor="bottom" id="Python Console" order="13" sideWeight="0.4997233" visible="true" weight="0.2526998" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="14" weight="0.3291536" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -837,7 +875,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added webserver functionality, WebAPI REST Services" />
     <MESSAGE value="Added two API endpoints (get available predictors and sources)" />
     <MESSAGE value="changed GUI, added post control to Backend" />
     <MESSAGE value="added working predictor, stop threads appropriately" />
@@ -862,7 +899,8 @@
     <MESSAGE value="fixed ring buffer issue" />
     <MESSAGE value="code refactoring" />
     <MESSAGE value="code refactoring + added docstrings" />
-    <option name="LAST_COMMIT_MESSAGE" value="code refactoring + added docstrings" />
+    <MESSAGE value="add environment.yaml file" />
+    <option name="LAST_COMMIT_MESSAGE" value="add environment.yaml file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -876,6 +914,11 @@
           <url>file://$PROJECT_DIR$/server/producer/signal_provider.py</url>
           <line>158</line>
           <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/consumer/visualizers/spectrogram/madmom_spectrogram_provider.py</url>
+          <line>13</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -975,13 +1018,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
           <caret line="40" selection-start-line="40" selection-end-line="56" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/visualisation_contract.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="54" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -1155,13 +1191,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/spectrogram/madmom_spectrogram_provider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docs/_build/html/AudioTagger.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -1216,14 +1245,28 @@
     <entry file="file://$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/dcase_predictor_provider.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
-          <caret line="140" column="70" lean-forward="true" selection-start-line="140" selection-start-column="70" selection-end-line="140" selection-end-column="70" />
+          <caret line="140" column="70" selection-start-line="140" selection-start-column="70" selection-end-line="140" selection-end-column="70" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/environment.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="14" column="15" lean-forward="true" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/visualisation_contract.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="48" column="54" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/spectrogram/madmom_spectrogram_provider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-450">
+          <caret line="18" column="97" selection-start-line="18" selection-start-column="97" selection-end-line="18" selection-end-column="97" />
         </state>
       </provider>
     </entry>
