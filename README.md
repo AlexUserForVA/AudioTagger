@@ -14,7 +14,7 @@ Use Python 3 and Anaconda in order to get the code running for guarantee!
 Version used during development: ```3.6.7```
 
 1. ```python setup.py develop```
-2. Execute conda environment.yaml (TODO)
+2. Execute conda environment.yaml with ```conda env create -f environment.yml```
 
 ## Architectural backend design
 The figure below should give a basic understanding of the information flow and the components involved in 
