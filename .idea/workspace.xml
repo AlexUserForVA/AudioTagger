@@ -2,37 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9015c207-3912-40b0-9892-7d06d89d8353" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/DI_Python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DI_Python.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/environment.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aec_audio_tagger_cpjku.egg-info/PKG-INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aec_audio_tagger_cpjku.egg-info/SOURCES.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aec_audio_tagger_cpjku.egg-info/dependency_links.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aec_audio_tagger_cpjku.egg-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/installs.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/audio_tagger_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/audio_tagger_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/load_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/load_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/consumer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/consumer/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/consumer/predictors/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/consumer/predictors/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/baseline_net.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/baseline_net.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/dcase_predictor_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/dcase_predictor_provider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/consumer/predictors/example_predictor/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/consumer/predictors/example_predictor/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/consumer/predictors/example_predictor/dummy_predictor.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/consumer/predictors/example_predictor/dummy_predictor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/consumer/predictors/predictor_contract.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/consumer/predictors/predictor_contract.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/consumer/visualizers/spectrogram/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/consumer/visualizers/spectrogram/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/consumer/visualizers/spectrogram/madmom_spectrogram_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/consumer/visualizers/spectrogram/madmom_spectrogram_provider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/consumer/visualizers/visualisation_contract.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/consumer/visualizers/visualisation_contract.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/webserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/webserver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/app/main_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/app/main_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/startup.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/startup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/utils/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/utils/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/utils/utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,23 +69,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/conf.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
-              <folding>
-                <element signature="e#564#573#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/docs/index.rst">
-          <provider selected="true" editor-type-id="restructured-text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/spectrogram/madmom_spectrogram_provider.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="295">
@@ -126,8 +80,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/dcase_predictor_provider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="151" column="23" selection-start-line="151" selection-start-column="23" selection-end-line="151" selection-end-column="23" />
+            <state relative-caret-position="295">
+              <caret line="140" column="70" lean-forward="true" selection-start-line="140" selection-start-column="70" selection-end-line="140" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/environment.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="15" lean-forward="true" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -161,7 +124,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/predictor/dcasepredictorprovider/DcasePredictorProvider.py" />
         <option value="$PROJECT_DIR$/server/predictor/examplepredictor/DummyPredictor.py" />
         <option value="$PROJECT_DIR$/server/spectrogram/madmomSpectrogramProvider.py" />
         <option value="$PROJECT_DIR$/server/audioTaggerModel.py" />
@@ -212,6 +174,7 @@
         <option value="$PROJECT_DIR$/server/consumer/visualizers/spectrogram/madmom_spectrogram_provider.py" />
         <option value="$PROJECT_DIR$/docs/conf.py" />
         <option value="$PROJECT_DIR$/docs/index.rst" />
+        <option value="$PROJECT_DIR$/environment.yaml" />
       </list>
     </option>
   </component>
@@ -232,11 +195,6 @@
             <path>
               <item name="AudioTagger" type="b2602c69:ProjectViewProjectNode" />
               <item name="AudioTagger" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AudioTagger" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AudioTagger" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -583,7 +541,7 @@
       <workItem from="1555618254481" duration="1587000" />
       <workItem from="1555656726537" duration="2669000" />
       <workItem from="1555703084420" duration="3420000" />
-      <workItem from="1555786251125" duration="7441000" />
+      <workItem from="1555786251125" duration="9433000" />
     </task>
     <task id="LOCAL-00001" summary="Added controller class, instantiate mvc components in startup">
       <created>1553337402631</created>
@@ -767,11 +725,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555679330801</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="code refactoring + added docstrings">
+      <created>1555793805132</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1555793805132</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="436874000" />
+    <option name="totallyTimeSpent" value="438866000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -786,7 +751,7 @@
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49568033" visible="true" weight="0.15550636" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49568033" visible="true" weight="0.15550636" />
       <window_info id="Structure" order="1" sideWeight="0.50431967" side_tool="true" weight="0.22800222" />
       <window_info id="Favorites" order="2" sideWeight="0.50431967" side_tool="true" weight="0.22800222" />
       <window_info anchor="bottom" id="Messages" order="0" />
@@ -801,7 +766,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32721382" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5002767" side_tool="true" weight="0.2526998" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.32829374" />
+      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.32829374" />
       <window_info anchor="bottom" id="Python Console" order="13" sideWeight="0.4997233" weight="0.2526998" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="14" weight="0.3291536" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -872,7 +837,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added controller class, instantiate mvc components in startup" />
     <MESSAGE value="Added webserver functionality, WebAPI REST Services" />
     <MESSAGE value="Added two API endpoints (get available predictors and sources)" />
     <MESSAGE value="changed GUI, added post control to Backend" />
@@ -897,7 +861,8 @@
     <MESSAGE value="test for refactored predictor due to prediction speed issues" />
     <MESSAGE value="fixed ring buffer issue" />
     <MESSAGE value="code refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="code refactoring" />
+    <MESSAGE value="code refactoring + added docstrings" />
+    <option name="LAST_COMMIT_MESSAGE" value="code refactoring + added docstrings" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -940,13 +905,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/anaconda3/envs/aec/lib/python3.6/site-packages/madmom/io/audio.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="448" column="42" lean-forward="true" selection-start-line="448" selection-start-column="42" selection-end-line="448" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/anaconda3/envs/aec/lib/python3.6/site-packages/madmom/audio/signal.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="497">
@@ -1204,13 +1162,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/dcase_predictor_provider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="151" column="23" selection-start-line="151" selection-start-column="23" selection-end-line="151" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docs/_build/html/AudioTagger.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -1218,34 +1169,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/webserver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
-          <folding>
-            <element signature="e#957#967#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/audio_tagger_manager.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4440">
           <caret line="310" selection-start-line="310" selection-end-line="313" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/_build/html/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -1261,6 +1188,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/index.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/_build/html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/webserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+          <folding>
+            <element signature="e#957#967#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/dcase_predictor_provider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="140" column="70" lean-forward="true" selection-start-line="140" selection-start-column="70" selection-end-line="140" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="15" lean-forward="true" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
