@@ -106,10 +106,14 @@ The next few steps show how to integrate a predictor into the backend system of 
     * Important note: Make sure that the given path in column ```predictorClassPath``` correctly identifies the path to the wrapper class. Otherwise, the backend cannot find the new predictor. There are already 2 predictors included. Have a look at this.
 2. Implement a predictor such that it inherits from ```PredictorContract``` ([see here](server/consumer/predictors/predictor_contract.py)) 
 
+3. Inform the manager once a new prediction has made with the function ```onNewPredictionCalculated(probabilities)```
     * parameter ```probabilities```: ```[["class1", 0.0006955251446925104, 0], ["class2", 0.0032770668622106314, 1], ...]```   
 ```1. element```: category name  
 ```2. element```: probability of prediction for this class  
 ```3. element```: positional argument (can be used to if special order of displayed classes is desired)  
+
+Note: Consumers should rely on the global timing variable ```tGroundTruth``` which is provided by ```AudioTaggerManager```. This counter variable should guarantee synchronization among consumers.  
+For further information read the corresponding documentation and have a look at the predictor template ([see here] (server/consumer/predictors/dcase_predictor_provider/dcase_predictor_provider.py))
 
 ### Adding audio files
 One can equip the backend with new selectable WAV files by editing the CSV-file [sources.csv](server/config/audiofiles.csv).  
