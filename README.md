@@ -98,7 +98,6 @@ Example request body: ```{'isLive': 1, 'file': 0, 'predictor': 1}``` where
 ```predictor```: id of the predictor  
 
 ### Adding predictors
-## TODO
 One can add new predictors by editing the CSV-file [predictors.csv](server/config/predictors.csv).
 #### Steps for building predictor wrapper
 The next few steps show how to integrate a predictor into the backend system of the audio tagger:  
