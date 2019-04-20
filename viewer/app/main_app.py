@@ -1,3 +1,7 @@
+"""
+Sample Kivy GUI
+"""
+
 import json
 import numpy as np
 import cv2
@@ -92,7 +96,7 @@ class MainApp(App):
         return json.loads(response.read())
 
     def loadSources(self):
-        response = urlopen("http://127.0.0.1:5000/source_list")
+        response = urlopen("http://127.0.0.1:5000/audiofile_list")
         return json.loads(response.read())
 
     def setIsLive(self, value):
@@ -117,7 +121,7 @@ class MainApp(App):
         self.notifyBackendAboutSettingsChanged()
 
     def getCurrentSpectrogram(self, dt):
-        response = urlopen("http://127.0.0.1:5000/live_spec")
+        response = urlopen("http://127.0.0.1:5000/live_visual")
 
         image = np.fromstring(response.read(), np.uint8)
         image = cv2.imdecode(image, cv2.IMREAD_COLOR)
