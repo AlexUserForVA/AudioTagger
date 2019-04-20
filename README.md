@@ -104,7 +104,7 @@ One can add new predictors by editing the CSV-file [predictors.csv](server/confi
 The next few steps show how to integrate a predictor into the backend system of the audio tagger:  
 1. Extend predictors.csv with the properties of the new predictor  
     * Important note: Make sure that the given path in column ```predictorClassPath``` correctly identifies the path to the wrapper class. Otherwise, the backend cannot find the new predictor. There are already 2 predictors included. Have a look at this.
-2. Implement a predictor such that it inherits from ```PredictorContract``` ([see here](server/consumer/predictors/predictor_contract.py)) 
+2. Implement a predictor such that it inherits from ```PredictorContract``` ([see here](server/consumer/predictors/predictor_contract.py)).
 
 3. Inform the manager once a new prediction has made with the function ```onNewPredictionCalculated(probabilities)```
     * parameter ```probabilities```: ```[["class1", 0.0006955251446925104, 0], ["class2", 0.0032770668622106314, 1], ...]```   
