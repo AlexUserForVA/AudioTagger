@@ -112,8 +112,9 @@ The next few steps show how to integrate a predictor into the backend system of 
 ```2. element```: probability of prediction for this class  
 ```3. element```: positional argument (can be used to if special order of displayed classes is desired)  
 
-Note: Consumers should rely on the global timing variable ```tGroundTruth``` which is provided by ```AudioTaggerManager```. This counter variable should guarantee synchronization among consumers.  
-For further information read the corresponding documentation and have a look at the predictor template ([see here] (server/consumer/predictors/dcase_predictor_provider/dcase_predictor_provider.py))
+#### Note:   
+Consumers should rely on the global timing variable ```tGroundTruth``` which is provided by ```AudioTaggerManager```. This counter variable should guarantee synchronization among consumers.  
+For further information read the corresponding documentation and have a look at the existing predictors ([see here](server/consumer/predictors/dcase_predictor_provider)).
 
 ### Adding audio files
 One can equip the backend with new selectable WAV files by editing the CSV-file [sources.csv](server/config/audiofiles.csv).  
