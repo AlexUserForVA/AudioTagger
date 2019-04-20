@@ -14,20 +14,15 @@ Use Python 3 and Anaconda in order to get the code running for guarantee!
 Version used during development: ```3.6.7```
 
 1. ```python setup.py develop```
+2. Execute conda environment.yaml (TODO)
 
-2. For GUI components the Python Kivy Framework is required. [See here](https://kivy.org/doc/stable/installation/installation-linux.html) for further installation details.
+## Architectural backend design
+The figure below should give a basic understanding of the information flow and the components involved in 
+the running backend system:
 
-3. required pip packages  
-        * opencv-python  
-        * matplotlib  
-        * Flask  
-        * Cython  
-        * madmom  
-        * torchvision  
-        * pyaudio  
-        * requests  
-        * kivy  
-
+TODO
+## Configuration file
+The file [config.py](server/config/config.py) includes some options which can be set before backend startup. Before the backend can be started, please set the variable ```PROJECT_ROOT``` to the absolute path of the projects root directory.
 ## Usage
 The current predictions and spectrograms can be accessed via a REST interface.
 Following command starts the backend: 
@@ -108,14 +103,18 @@ One can add new predictors by editing the CSV-file [predictors.csv](server/confi
 #### Steps for building predictor wrapper
 The next few steps show how to integrate a predictor into the backend system of the audio tagger:  
 1. Extend predictors.csv with the properties of the new predictor  
-    * Important note: Make sure that the given path in column ```predictorClassPath``` correctly identifies the path to the wrapper class. Otherwise, the backend cannot find the new predictor. There are already 3 predictors included. Have a look at this.
-2. Implement a predictor such that it inherits from ```IPredictor``` ([see here](server/predictor/IPredictor.py)) 
-3. Call base class constructor!
+    * Important note: Make sure that the given path in column ```predictorClassPath``` correctly identifies the path to the wrapper class. Otherwise, the backend cannot find the new predictor. There are already 2 predictors included. Have a look at this.
+2. Implement a predictor such that it inherits from ```PredictorContract``` ([see here](server/consumer/predictors/predictor_contract.py)) 
 
+3. Inform the manager once a new prediction has made with the function ```onNewPredictionCalculated(probabilities)```
     * parameter ```probabilities```: ```[["class1", 0.0006955251446925104, 0], ["class2", 0.0032770668622106314, 1], ...]```   
 ```1. element```: category name  
 ```2. element```: probability of prediction for this class  
 ```3. element```: positional argument (can be used to if special order of displayed classes is desired)  
+
+#### Note:   
+Consumers should rely on the global timing variable ```tGroundTruth``` which is provided by ```AudioTaggerManager```. This counter variable should guarantee synchronization among consumers.  
+For further information read the corresponding documentation and have a look at the existing predictors ([see here](server/consumer/predictors)).
 
 ### Adding audio files
 One can equip the backend with new selectable WAV files by editing the CSV-file [sources.csv](server/config/audiofiles.csv).  
