@@ -14,7 +14,13 @@ Use Python 3 and Anaconda in order to get the code running for guarantee!
 Version used during development: ```3.6.7```
 
 1. ```python setup.py develop```
-2. Execute conda environment.yaml
+2. Execute conda environment.yaml (TODO)
+
+## Architectural backend design
+The figure below should give a basic understanding of the information flow and the components involved in 
+the running backend system:
+
+TODO
 
 ## Usage
 The current predictions and spectrograms can be accessed via a REST interface.
@@ -92,6 +98,7 @@ Example request body: ```{'isLive': 1, 'file': 0, 'predictor': 1}``` where
 ```predictor```: id of the predictor  
 
 ### Adding predictors
+## TODO
 One can add new predictors by editing the CSV-file [predictors.csv](server/config/predictors.csv).
 #### Steps for building predictor wrapper
 The next few steps show how to integrate a predictor into the backend system of the audio tagger:  
