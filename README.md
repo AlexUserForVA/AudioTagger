@@ -143,6 +143,3 @@ If you want to dive deeper into the source code of audio tagger backend, please 
 
 ## Support
 Please contact the Institute for Computational Perception at Johannes Kepler University in Linz for questions regarding usage and code.
-
-## License
-TODO
