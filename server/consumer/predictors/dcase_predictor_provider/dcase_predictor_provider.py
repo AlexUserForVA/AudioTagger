@@ -99,8 +99,6 @@ class PredictionThread(Thread):
     Thread for periodically computing new class predictions
     based on the currently available sliding window.
 
-    ...
-
     Attributes
     ----------
     provider : PredictorContract
@@ -163,8 +161,6 @@ class DcasePredictorProvider(PredictorContract):
     makes predictions where spectrograms are considered
     as inputs and a convolutional neural network produces
     class probabilities.
-
-    ...
 
     Attributes
     ----------

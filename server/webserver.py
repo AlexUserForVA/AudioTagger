@@ -14,6 +14,7 @@ web server, one can also send the backend that it should switch to another
 predictor or should use microphone input or audio file input.
 
 """
+
 import cv2
 import json
 import numpy as np

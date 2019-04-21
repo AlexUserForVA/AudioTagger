@@ -30,8 +30,6 @@ class MicrophoneThread(Thread):
     """
     Thread for audio input over microphone.
 
-    ...
-
     Attributes
     ----------
     manager : audio tagger manager object
@@ -104,8 +102,6 @@ class MicrophoneThread(Thread):
 class AudiofileThread(Thread):
     """
     Thread for audio input over files.
-
-    ...
 
     Attributes
     ----------
@@ -190,8 +186,6 @@ class AudiofileThread(Thread):
 class AudioTaggerManager:
     """
     This is the central management class of the audio tagger backend system.
-
-    ...
 
     Attributes
     ----------

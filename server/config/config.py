@@ -1,3 +1,7 @@
+"""This module includes some options which can be set before backend startup.
+At first, please set the variable ``PROJECT_ROOT`` to the absolute path of the projects root directory.
+
+"""
 # absolute path to the project root directory
 PROJECT_ROOT = '/home/alex/PycharmProjects/AudioTagger'
 

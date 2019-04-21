@@ -91,8 +91,6 @@ class MadmomSpectrogramProvider(VisualisationContract):
     computes new spectrograms based on the most current
     audio chunks which is indicated via ``tGroundTruth``.
 
-    ...
-
     Attributes
     ----------
     sig_proc : madmom.Processor

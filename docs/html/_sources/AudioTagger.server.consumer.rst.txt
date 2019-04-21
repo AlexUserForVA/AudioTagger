@@ -1,0 +1,18 @@
+AudioTagger.server.consumer package
+===================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+    AudioTagger.server.consumer.predictors
+    AudioTagger.server.consumer.visualizers
+
+Module contents
+---------------
+
+.. automodule:: AudioTagger.server.consumer
+    :members:
+    :undoc-members:
+    :show-inheritance:

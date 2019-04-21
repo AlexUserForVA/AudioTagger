@@ -77,8 +77,6 @@ class DummyPredictor(PredictorContract):
     serves as a dummy predictor and shows the basic
     structure of a predictor.
 
-    ...
-
     Attributes
     ----------
     predThread:
