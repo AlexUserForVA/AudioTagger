@@ -22,7 +22,7 @@ the running backend system:
 
 TODO
 ## Configuration file
-The file [config.py](docs/html) includes some options which can be set before backend startup. Before the backend can be started, please set the variable ```PROJECT_ROOT``` to the absolute path of the projects root directory.
+The file [config.py](server/config/config.py) includes some options which can be set before backend startup. Before the backend can be started, please set the variable ```PROJECT_ROOT``` to the absolute path of the projects root directory.
 ## Usage
 The current predictions and spectrograms can be accessed via a REST interface.
 Following command starts the backend: 
@@ -139,7 +139,7 @@ Important: The GUI requires a started instance of ```server/webserver.py``` to s
 </p>
 
 ## Documentation
-If you want to dive deeper into the source code of audio tagger backend, please have a look at the detailed [documentation](docs/TODO).
+If you want to dive deeper into the source code of audio tagger backend, please have a look at the detailed [documentation](docs/html).
 
 ## Support
 Please contact the Institute for Computational Perception at Johannes Kepler University in Linz for questions regarding usage and code.
