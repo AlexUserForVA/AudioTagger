@@ -21,7 +21,7 @@ The figure below should give a basic understanding of the information flow and t
 the running backend system:
 
 <p align="center">
-  <img src="img/architecture.PNG" title="Spectrogram called via browser">
+  <img src="img/architectureDesign.png" title="Spectrogram called via browser">
 </p>
 
 ## Configuration file
