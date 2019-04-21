@@ -138,6 +138,9 @@ Important: The GUI requires a started instance of ```server/webserver.py``` to s
   <img src="img/gui2.png" width="500" title="Spectrogram called via browser">
 </p>
 
+## Documentation
+For further information have a look at the [documentation](docs/TODO).
+
 ## Support
 Please contact the Institute for Computational Perception at Johannes Kepler University in Linz for questions regarding usage and code.
 
