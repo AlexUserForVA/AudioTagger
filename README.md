@@ -20,7 +20,10 @@ Version used during development: ```3.6.7```
 The figure below should give a basic understanding of the information flow and the components involved in 
 the running backend system:
 
-TODO
+<p align="center">
+  <img src="img/architecture.PNG" title="Spectrogram called via browser">
+</p>
+
 ## Configuration file
 The file [config.py](server/config/config.py) includes some options which can be set before backend startup. Before the backend can be started, please set the variable ```PROJECT_ROOT``` to the absolute path of the projects root directory.
 ## Usage
