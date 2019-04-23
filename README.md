@@ -44,12 +44,12 @@ In order to guarantee independence of programming languages, all output can be a
 | ----------- | --------- |
 | Http-Method | ```GET``` |    
 | Response Content-Type | ```JPEG``` |   
-| URL |```http://127.0.0.1:5000/live_spec``` |
-| Return | a JPEG from the current spectrogram |
+| URL |```http://127.0.0.1:5000/live_visual``` |
+| Return | a JPEG from the current visualization (e.g. spectrogram) |
 
-There is an additional endpoint to display the current spectrogram in the browser:
+There is an additional endpoint to display the same content in the browser:
 ```bash
-http://127.0.0.1:5000/live_spec_browser
+http://127.0.0.1:5000/live_visual_browser
 ```
 Example output: 
 <p align="center">
@@ -74,7 +74,7 @@ Example response: ```[["Acoustic_guitar", 0.0006955251446925104, 0], ["Applause"
 | ----------- | --------- |
 | Http-Method | ```GET``` |    
 | Response Content-Type | ```JSON``` |   
-| URL |```http://127.0.0.1:5000/source_list``` |
+| URL |```http://127.0.0.1:5000/audiofile_list``` |
 | Return | the available audio files as a list of json objects |
 
 Example response: ```[{"id": 0, "displayname": "Trumpets"}, {"id": 1, "displayname": "Song1"}, {"id": 2, "displayname": "Song2"}, ...]```   
