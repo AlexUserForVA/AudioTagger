@@ -1,3 +1,7 @@
+"""
+Sample Kivy GUI
+"""
+
 import json
 import numpy as np
 import cv2
@@ -14,17 +18,18 @@ from kivy.properties import ListProperty, StringProperty
 from viewer.utils.utils import getScreenResolution
 
 class AudioTaggerWindow(FloatLayout):
-    prob_list = ListProperty([100, 100, 100, 100, 100])
-    class_list = ListProperty(['', '', '', '', ''])
-    class_bar_height = ListProperty([0, 0, 0, 0, 0])
-    pred_list = ListProperty([])
-    source_list = ListProperty([])
-    sourceProperty = StringProperty()
-    predictorProperty = StringProperty()
+    prob_list = ListProperty([100, 100, 100, 100, 100]) # length of class probability bars
+    class_list = ListProperty(['', '', '', '', '']) # labels of class probability bars
+    class_bar_height = ListProperty([0, 0, 0, 0, 0]) # simulate visibility of class probability bars
+    pred_list = ListProperty([])    # selectable list of predictors
+    source_list = ListProperty([])  # selectable list of audio files
+    sourceProperty = StringProperty() # label showing the currently active audio input
+    predictorProperty = StringProperty() # label showing the currently active predictor
 
 
     def start_Button_pressed(self, label):
-        self.but_1.disabled = True
+        self.start_button.disabled = True
+        # get current spectrogram and predictions periodically by polling
         Clock.schedule_interval(App.get_running_app().getCurrentSpectrogram, 0.02)
         Clock.schedule_interval(App.get_running_app().getCurrentPrediction, 0.02)
 
@@ -63,6 +68,7 @@ class MainApp(App):
         self.window.pred_list = self.loadPredictors()
         self.window.source_list = self.loadSources()
 
+        # init
         self.isLive = True
         self.window.sourceView.height = 0.0
         self.window.fileMessageLabel.height = self.window.fileMessageLabel.parent.height * 0.8
@@ -71,7 +77,8 @@ class MainApp(App):
 
         self.setSummaryLabels()
 
-        self.window.switch_1.bind(active=self.window.liveOrFileSettingHasChanged)
+        # register trigger functions to update new settings (predictors, input source)
+        self.window.input_switch.bind(active=self.window.liveOrFileSettingHasChanged)
         self.window.predView.adapter.bind(on_selection_change=self.window.predSettingHasChanged) # doesn't work in .kv file
         self.window.sourceView.adapter.bind(on_selection_change=self.window.sourceSettingHasChanged)  # doesn't work in .kv file
 
@@ -89,7 +96,7 @@ class MainApp(App):
         return json.loads(response.read())
 
     def loadSources(self):
-        response = urlopen("http://127.0.0.1:5000/source_list")
+        response = urlopen("http://127.0.0.1:5000/audiofile_list")
         return json.loads(response.read())
 
     def setIsLive(self, value):
@@ -114,25 +121,29 @@ class MainApp(App):
         self.notifyBackendAboutSettingsChanged()
 
     def getCurrentSpectrogram(self, dt):
-        response = urlopen("http://127.0.0.1:5000/live_spec")
+        response = urlopen("http://127.0.0.1:5000/live_visual")
 
         image = np.fromstring(response.read(), np.uint8)
         image = cv2.imdecode(image, cv2.IMREAD_COLOR)
         image = cv2.flip(image, 0)
 
+        # send new spectrogram to UI thread
         self.window.update_Spectrogram_Image(image)
 
     def getCurrentPrediction(self, dt):
         response = urlopen("http://127.0.0.1:5000/live_pred")
         prob_list = json.loads(response.read())
+        # ordered by class probability if n of classes < 5, else stable position
         if len(prob_list) > 5:
             prob_list = sorted(prob_list, key=lambda i: i[1], reverse=True)
         for i in range(5):
             if i < len(prob_list):
                 class_label = prob_list[i][0]
                 class_width = prob_list[i][1] * self.window.class1Label.parent.width
+                # send new predictions to UI thread
                 self.window.update_Class_Prob_Bar(class_label, class_width, 20, i)
             else:
+                # send new predictions to UI thread
                 self.window.update_Class_Prob_Bar('', 1, 1, i)
 
     def notifyBackendAboutSettingsChanged(self):
@@ -140,4 +151,5 @@ class MainApp(App):
         fileId = [elem['id'] for elem in self.window.source_list if elem['displayname'] == self.file][0]
         predictorId = [elem['id'] for elem in self.window.pred_list if elem['displayname'] == self.predictor][0]
         settingsDict = {'isLive' : 1 if self.isLive else 0 , 'file' : fileId, 'predictor' : predictorId}
+        # send new settings to backend
         res = requests.post('http://localhost:5000/settings', json=settingsDict)

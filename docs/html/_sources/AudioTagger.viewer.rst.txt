@@ -1,0 +1,30 @@
+AudioTagger.viewer package
+==========================
+
+Subpackages
+-----------
+
+.. toctree::
+
+    AudioTagger.viewer.app
+    AudioTagger.viewer.utils
+
+Submodules
+----------
+
+AudioTagger.viewer.startup module
+---------------------------------
+
+.. automodule:: AudioTagger.viewer.startup
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: AudioTagger.viewer
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -23,8 +23,8 @@
             size: self.size
             pos: self.pos
 
-    but_1: but_1
-    switch_1: switch_1
+    start_button: start_button
+    input_switch: input_switch
     sourceView: sourceView
     img_texture: img_texture
     predView: predView
@@ -84,7 +84,7 @@
                         bold: True
                         text: 'Microphone Mode'
                     Switch:
-                        id: switch_1
+                        id: input_switch
                         active: True
                 ListView:
                     id: sourceView
@@ -245,7 +245,7 @@
                         bold: True
                         font_size: 20
             Button:
-                id: but_1
+                id: start_button
                 text: 'Start'
                 size_hint_y: None
                 height: self.parent.height * 0.2
@@ -253,7 +253,7 @@
                 bold: True
                 background_normal: ''
                 background_color: 0.35, 0.66, 0.41, 1
-                on_press: root.start_Button_pressed(but_1.text)
+                on_press: root.start_Button_pressed(start_button.text)
                 canvas.before:
                     Color:
                         rgba: 1, 1, 1, 1

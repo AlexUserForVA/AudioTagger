@@ -1,3 +1,7 @@
+"""This module contains the neural network architecture used
+by the module ``dcase_predictor_provider``
+
+"""
 import torch.nn as nn
 import torch.nn.functional as F
 

@@ -1,0 +1,22 @@
+AudioTagger.viewer.utils package
+================================
+
+Submodules
+----------
+
+AudioTagger.viewer.utils.utils module
+-------------------------------------
+
+.. automodule:: AudioTagger.viewer.utils.utils
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: AudioTagger.viewer.utils
+    :members:
+    :undoc-members:
+    :show-inheritance:
