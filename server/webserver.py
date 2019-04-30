@@ -34,14 +34,9 @@ audiofileList = loadAudiofiles()
 
 visualisationProvider = MadmomSpectrogramProvider()
 
-<<<<<<< HEAD
-predProviderClass = locate('server.consumer.predictors.{}'.format(predList[0]['predictorClassPath']))
-predProvider = predProviderClass()
-=======
 # load prediction class via reflection
 predictionProviderClass = locate('server.consumer.predictors.{}'.format(predictorList[int(START_PREDICTOR)]['predictorClassPath']))
 predictionProvider = predictionProviderClass()
->>>>>>> origin/withAudio
 
 model = AudioTaggerManager(visualisationProvider, predictionProvider, predictorList, audiofileList)
 
