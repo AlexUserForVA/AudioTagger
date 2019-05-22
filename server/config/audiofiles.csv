@@ -1,4 +1,4 @@
 id;displayname;path
-0;Trumpets;files/trumpet.wav
-1;Song1;files/sunset.wav
-2;Song2;files/saveme.wav
+0;Trumpets;server/files/trumpet.wav
+1;Song1;server/files/sunset.wav
+2;Song2;server/files/saveme.wav

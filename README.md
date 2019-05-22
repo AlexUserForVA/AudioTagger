@@ -14,13 +14,16 @@ Use Python 3 and Anaconda in order to get the code running for guarantee!
 Version used during development: ```3.6.7```
 
 1. ```python setup.py develop```
-2. Execute conda environment.yaml (TODO)
+2. Execute conda environment.yaml with ```conda env create -f environment.yml```
 
 ## Architectural backend design
 The figure below should give a basic understanding of the information flow and the components involved in 
 the running backend system:
 
-TODO
+<p align="center">
+  <img src="img/architectureDesign.png" title="Spectrogram called via browser">
+</p>
+
 ## Configuration file
 The file [config.py](server/config/config.py) includes some options which can be set before backend startup. Before the backend can be started, please set the variable ```PROJECT_ROOT``` to the absolute path of the projects root directory.
 ## Usage
@@ -41,12 +44,12 @@ In order to guarantee independence of programming languages, all output can be a
 | ----------- | --------- |
 | Http-Method | ```GET``` |    
 | Response Content-Type | ```JPEG``` |   
-| URL |```http://127.0.0.1:5000/live_spec``` |
-| Return | a JPEG from the current spectrogram |
+| URL |```http://127.0.0.1:5000/live_visual``` |
+| Return | a JPEG from the current visualization (e.g. spectrogram) |
 
-There is an additional endpoint to display the current spectrogram in the browser:
+There is an additional endpoint to display the same content in the browser:
 ```bash
-http://127.0.0.1:5000/live_spec_browser
+http://127.0.0.1:5000/live_visual_browser
 ```
 Example output: 
 <p align="center">
@@ -71,7 +74,7 @@ Example response: ```[["Acoustic_guitar", 0.0006955251446925104, 0], ["Applause"
 | ----------- | --------- |
 | Http-Method | ```GET``` |    
 | Response Content-Type | ```JSON``` |   
-| URL |```http://127.0.0.1:5000/source_list``` |
+| URL |```http://127.0.0.1:5000/audiofile_list``` |
 | Return | the available audio files as a list of json objects |
 
 Example response: ```[{"id": 0, "displayname": "Trumpets"}, {"id": 1, "displayname": "Song1"}, {"id": 2, "displayname": "Song2"}, ...]```   
@@ -138,8 +141,8 @@ Important: The GUI requires a started instance of ```server/webserver.py``` to s
   <img src="img/gui2.png" width="500" title="Spectrogram called via browser">
 </p>
 
+## Documentation
+If you want to dive deeper into the source code of audio tagger backend, please have a look at the detailed [documentation](docs/html).
+
 ## Support
 Please contact the Institute for Computational Perception at Johannes Kepler University in Linz for questions regarding usage and code.
-
-## License
-TODO
