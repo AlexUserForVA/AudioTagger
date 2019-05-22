@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9015c207-3912-40b0-9892-7d06d89d8353" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/audio_tagger_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/audio_tagger_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/config/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/dcase_predictor_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/dcase_predictor_provider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/consumer/predictors/example_predictor/dummy_predictor.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/consumer/predictors/example_predictor/dummy_predictor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/consumer/visualizers/spectrogram/madmom_spectrogram_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/consumer/visualizers/spectrogram/madmom_spectrogram_provider.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/webserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/webserver.py" afterDir="false" />
     </list>
@@ -46,90 +46,13 @@
     <expand />
     <select />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="AudioTagger" />
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/consumer/predictors/predictor_contract.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="40" selection-start-line="40" selection-end-line="56" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/spectrogram/madmom_spectrogram_provider.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-833">
-              <caret line="92" selection-start-line="92" selection-end-line="92" />
-              <folding>
-                <element signature="e#645#663#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/visualisation_contract.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="48" column="54" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/baseline_net.pt">
-          <provider selected="true" editor-type-id="LargeFileEditor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/consumer/predictors/example_predictor/dummy_predictor.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="77" column="29" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/baseline_net.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/webserver.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-165">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-              <folding>
-                <element signature="e#957#967#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/config/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/config/load_config.py">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="20" column="70" selection-start-line="20" selection-start-column="70" selection-end-line="20" selection-end-column="70" />
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -137,8 +60,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/dcase_predictor_provider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1628">
-              <caret line="162" column="24" selection-start-line="162" selection-start-column="24" selection-end-line="162" selection-end-column="24" />
+            <state relative-caret-position="-658">
+              <caret line="184" column="72" lean-forward="true" selection-start-line="184" selection-start-column="72" selection-end-line="184" selection-end-column="72" />
+              <folding>
+                <element signature="e#1076#1085#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/audio_tagger_manager.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-360">
+              <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/spectrogram/madmom_spectrogram_provider.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-900">
+              <caret line="69" selection-start-line="69" selection-end-line="70" selection-end-column="46" />
+              <folding>
+                <element signature="e#644#655#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/webserver.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-343">
+              <caret line="37" column="23" lean-forward="true" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+              <folding>
+                <element signature="e#958#967#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -172,7 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/spectrogram/madmomSpectrogramProvider.py" />
         <option value="$PROJECT_DIR$/server/audioTaggerModel.py" />
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/server/predictor/test_predictor/test_predictor_provider.py" />
@@ -217,26 +175,28 @@
         <option value="$PROJECT_DIR$/environment.yaml" />
         <option value="$PROJECT_DIR$/docs/source/rst/conf.py" />
         <option value="$PROJECT_DIR$/docs/source/conf.py" />
-        <option value="$PROJECT_DIR$/server/audio_tagger_manager.py" />
-        <option value="$PROJECT_DIR$/server/config/config.py" />
-        <option value="$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/dcase_predictor_provider.py" />
         <option value="$PROJECT_DIR$/server/consumer/predictors/example_predictor/dummy_predictor.py" />
-        <option value="$PROJECT_DIR$/server/consumer/visualizers/spectrogram/madmom_spectrogram_provider.py" />
+        <option value="$PROJECT_DIR$/server/consumer/utils.py" />
         <option value="$PROJECT_DIR$/server/webserver.py" />
+        <option value="$PROJECT_DIR$/server/config/config.py" />
+        <option value="$PROJECT_DIR$/server/consumer/visualizers/spectrogram/madmom_spectrogram_provider.py" />
+        <option value="$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/dcase_predictor_provider.py" />
+        <option value="$PROJECT_DIR$/server/audio_tagger_manager.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="656" />
-    <option name="y" value="27" />
-    <option name="width" value="897" />
-    <option name="height" value="789" />
+    <option name="x" value="67" />
+    <option name="y" value="25" />
+    <option name="width" value="927" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -247,19 +207,23 @@
             <path>
               <item name="AudioTagger" type="b2602c69:ProjectViewProjectNode" />
               <item name="AudioTagger" type="462c0819:PsiDirectoryNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AudioTagger" type="b2602c69:ProjectViewProjectNode" />
               <item name="AudioTagger" type="462c0819:PsiDirectoryNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioTagger" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioTagger" type="462c0819:PsiDirectoryNode" />
+              <item name="viewer" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -436,9 +400,6 @@
       <module name="DI_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -601,6 +562,8 @@
       <workItem from="1555656726537" duration="2669000" />
       <workItem from="1555703084420" duration="3420000" />
       <workItem from="1555786251125" duration="15529000" />
+      <workItem from="1555875762588" duration="599000" />
+      <workItem from="1558508344465" duration="7635000" />
     </task>
     <task id="LOCAL-00001" summary="Added controller class, instantiate mvc components in startup">
       <created>1553337402631</created>
@@ -809,7 +772,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="444962000" />
+    <option name="totallyTimeSpent" value="453319000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -821,9 +784,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="7" />
+    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49568033" visible="true" weight="0.15550636" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49568033" visible="true" weight="0.18428335" />
       <window_info id="Structure" order="1" sideWeight="0.50431967" side_tool="true" weight="0.22800222" />
       <window_info id="Favorites" order="2" sideWeight="0.50431967" side_tool="true" weight="0.22800222" />
       <window_info anchor="bottom" id="Messages" order="0" />
@@ -835,12 +799,12 @@
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32721382" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32721382" />
-      <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5002767" side_tool="true" weight="0.2526998" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32829374" />
-      <window_info anchor="bottom" id="Python Console" order="13" sideWeight="0.4997233" visible="true" weight="0.2526998" />
-      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="14" weight="0.3291536" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5002767" side_tool="true" weight="0.2526998" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32829374" />
+      <window_info anchor="bottom" id="Version Control" order="12" weight="0.3261339" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="13" sideWeight="0.4997233" visible="true" weight="0.2526998" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="14" weight="0.32829374" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -851,6 +815,33 @@
       <window_info anchor="right" id="Coverage" order="7" side_tool="true" />
       <window_info anchor="right" id="SciView" order="8" weight="0.32982844" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19701162" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32810867" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3092999" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.29805616" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32721382" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32721382" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32829374" />
+      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.2526998" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.3291536" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32993197" />
+      <window_info anchor="right" id="SciView" order="4" />
+      <window_info anchor="right" x="0" y="0" width="413" height="884" id="Documentation" order="5" side_tool="true" weight="0.2432283" />
+      <window_info anchor="right" id="R Graphics" order="6" />
+      <window_info anchor="right" id="R Packages" order="7" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -951,7 +942,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/server/consumer/visualizers/spectrogram/madmom_spectrogram_provider.py</url>
-          <line>13</line>
+          <line>125</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
@@ -967,10 +958,9 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AEC_AudioTaggerGUI_v2$webserver.coverage" NAME="webserver Coverage Results" MODIFIED="1555270639322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
     <SUITE FILE_PATH="coverage/AudioTagger$startup.coverage" NAME="startup Coverage Results" MODIFIED="1555362951654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AudioTagger$webserver.coverage" NAME="webserver Coverage Results" MODIFIED="1555672546352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+    <SUITE FILE_PATH="coverage/AudioTagger$webserver.coverage" NAME="webserver Coverage Results" MODIFIED="1558513127677" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
     <SUITE FILE_PATH="coverage/AEC_AudioTaggerGUI$startup.coverage" NAME="startup Coverage Results" MODIFIED="1555191138468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AEC_AudioTaggerGUI$webserver.coverage" NAME="webserver Coverage Results" MODIFIED="1555253768179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
-    <SUITE FILE_PATH="coverage/AudioTagger$sphinx_task_in_sphinx_task_in_.coverage" NAME="sphinx task in sphinx task in sphinx task in  Coverage Results" MODIFIED="1555789373790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -982,23 +972,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/anaconda3/envs/aec/lib/python3.6/threading.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
-          <caret line="930" column="66" selection-start-line="930" selection-start-column="66" selection-end-line="930" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/consumer/predictors/test_predictor/test_predictor_provider.py" />
-    <entry file="file://$PROJECT_DIR$/server/producer/pyaudio_producer.py" />
-    <entry file="file://$PROJECT_DIR$/server/producer/audioProvider.py" />
-    <entry file="file://$PROJECT_DIR$/server/config/audiofiles.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="28" lean-forward="true" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/config/predictors.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1034,13 +1007,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/consumer/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/server/consumer/__init__.py" />
     <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/spectrogram/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1048,13 +1015,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="19" lean-forward="true" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/__init__.py" />
     <entry file="file://$PROJECT_DIR$/viewer/kv/main.kv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -1083,13 +1044,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/viewer/startup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/viewer/app/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1107,28 +1061,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/source/index.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/build/html/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/installs.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aec_audio_tagger_cpjku.egg-info/dependency_links.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aec_audio_tagger_cpjku.egg-info/PKG-INFO">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/source/index.rst" />
+    <entry file="file://$PROJECT_DIR$/docs/build/html/index.html" />
+    <entry file="file://$PROJECT_DIR$/installs.txt" />
+    <entry file="file://$PROJECT_DIR$/requirements.txt" />
+    <entry file="file://$PROJECT_DIR$/aec_audio_tagger_cpjku.egg-info/dependency_links.txt" />
+    <entry file="file://$PROJECT_DIR$/aec_audio_tagger_cpjku.egg-info/PKG-INFO" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1146,26 +1084,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/_build/html/AudioTagger.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/conf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
-          <folding>
-            <element signature="e#564#573#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/index.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/_build/html/AudioTagger.html" />
+    <entry file="file://$PROJECT_DIR$/docs/conf.py" />
+    <entry file="file://$PROJECT_DIR$/docs/index.rst" />
     <entry file="file://$PROJECT_DIR$/server/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1173,44 +1094,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/_build/html/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aec_audio_tagger_cpjku.egg-info/top_level.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aec_audio_tagger_cpjku.egg-info/SOURCES.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="21" lean-forward="true" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/environment.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/source/rst/conf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="16" column="77" selection-start-line="16" selection-start-column="77" selection-end-line="16" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/source/conf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="72" column="25" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/_build/html/index.html" />
+    <entry file="file://$PROJECT_DIR$/aec_audio_tagger_cpjku.egg-info/top_level.txt" />
+    <entry file="file://$PROJECT_DIR$/aec_audio_tagger_cpjku.egg-info/SOURCES.txt" />
+    <entry file="file://$PROJECT_DIR$/environment.yml" />
+    <entry file="file://$PROJECT_DIR$/docs/source/rst/conf.py" />
+    <entry file="file://$PROJECT_DIR$/docs/source/conf.py" />
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1222,20 +1111,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/audio_tagger_manager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/config/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
@@ -1256,51 +1131,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/dcase_predictor_provider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1628">
-          <caret line="162" column="24" selection-start-line="162" selection-start-column="24" selection-end-line="162" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/server/consumer/predictors/predictor_contract.py" />
+    <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/visualisation_contract.py" />
+    <entry file="file://$PROJECT_DIR$/server/audio_tagger_model.py" />
+    <entry file="file://$PROJECT_DIR$/server/producer/signal_provider.py" />
+    <entry file="file://$PROJECT_DIR$/server/consumer/predictors/i_predictor.py" />
+    <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/i_visualizer.py" />
     <entry file="file://$PROJECT_DIR$/server/consumer/predictors/example_predictor/dummy_predictor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="77" column="29" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="29" />
+        <state relative-caret-position="1560">
+          <caret line="108" column="20" selection-start-line="108" selection-start-column="20" selection-end-line="108" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/consumer/predictors/predictor_contract.py">
+    <entry file="file://$PROJECT_DIR$/viewer/startup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="40" selection-start-line="40" selection-end-line="56" selection-end-column="33" />
+        <state relative-caret-position="120">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/spectrogram/madmom_spectrogram_provider.py">
+    <entry file="file://$PROJECT_DIR$/server/consumer/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-833">
-          <caret line="92" selection-start-line="92" selection-end-line="92" />
-          <folding>
-            <element signature="e#645#663#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/visualisation_contract.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="54" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
+        <state relative-caret-position="45">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/webserver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-165">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="-343">
+          <caret line="37" column="23" lean-forward="true" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
           <folding>
-            <element signature="e#957#967#0" expanded="true" />
+            <element signature="e#958#967#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/config/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/consumer/visualizers/spectrogram/madmom_spectrogram_provider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-900">
+          <caret line="69" selection-start-line="69" selection-end-line="70" selection-end-column="46" />
+          <folding>
+            <element signature="e#644#655#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/consumer/predictors/dcase_predictor_provider/dcase_predictor_provider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-658">
+          <caret line="184" column="72" lean-forward="true" selection-start-line="184" selection-start-column="72" selection-end-line="184" selection-end-column="72" />
+          <folding>
+            <element signature="e#1076#1085#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/audio_tagger_manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-360">
+          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
         </state>
       </provider>
     </entry>

@@ -20,6 +20,7 @@ new predictions.
 
 """
 import os
+import time
 import torch
 import torch.nn as nn
 import numpy as np
@@ -76,6 +77,8 @@ class SlidingWindowThread(Thread):
         while not self._stopevent.isSet():
             if len(self.provider.manager.sharedMemory) > 0: # start consuming once the producer has started
                 self.provider.computeSpectrogram()
+            with self.provider.condition:
+                self.provider.condition.wait()
 
     def join(self, timeout=None):
         """Stops the thread.
@@ -137,6 +140,8 @@ class PredictionThread(Thread):
             if len(self.provider.manager.sharedMemory) > 0:   # start consuming once the producer has started
                 probs = self.provider.predict()
                 self.provider.manager.onNewPredictionCalculated(probs)
+            with self.provider.condition:
+                self.provider.condition.wait()
 
     def join(self, timeout=None):
         """Stops the thread.
@@ -220,7 +225,7 @@ class DcasePredictorProvider(PredictorContract):
 
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-    def __init__(self):
+    def __init__(self, condition):
         """
         Parameters
         ----------
@@ -243,6 +248,7 @@ class DcasePredictorProvider(PredictorContract):
         # sliding window as cache
         self.sliding_window = np.zeros((128, 256), dtype=np.float32)
         self.lastProceededGroundTruth = None
+        self.condition = condition
 
     def start(self):
         """Start all sub tasks necessary for continuous prediction.

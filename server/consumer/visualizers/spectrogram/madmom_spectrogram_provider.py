@@ -10,7 +10,7 @@ sliding window over time.
 Finally the method ``onNewVisualisationCalculated(spec)`` informs the ``AudioTaggerManager``
 that a new spectrogram is available.
 """
-
+import time
 import numpy as np
 
 from threading import Thread, Event
@@ -67,6 +67,8 @@ class VisualisationThread(Thread):
             if len(self.provider.manager.sharedMemory) > 0: # start consuming once the producer has started
                 spec = self.provider.computeSpectrogram()
                 self.provider.manager.onNewVisualisationCalculated(spec)
+            with self.provider.condition:
+                self.provider.condition.wait()
 
     def join(self, timeout=None):
         """Stops the thread.
@@ -127,7 +129,7 @@ class MadmomSpectrogramProvider(VisualisationContract):
     filt_proc = LogarithmicFilteredSpectrogramProcessor(filterbank=LogFilterbank, num_bands=26, fmin=20, fmax=14000)
     processorPipeline = SequentialProcessor([sig_proc, fsig_proc, spec_proc, filt_proc])
 
-    def __init__(self):
+    def __init__(self, condition):
         """
         Parameters
         ----------
@@ -140,6 +142,7 @@ class MadmomSpectrogramProvider(VisualisationContract):
         # sliding window as cache
         self.sliding_window = np.zeros((128, 256), dtype=np.float32)
         self.lastProceededGroundTruth = None
+        self.condition = condition
 
     def start(self):
         """Start all sub tasks necessary for continuous spectrograms.

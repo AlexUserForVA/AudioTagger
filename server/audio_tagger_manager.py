@@ -21,7 +21,7 @@ import numpy as np
 from collections import deque
 
 from pydoc import locate
-from threading import Thread, Event
+from threading import Thread, Event, Condition
 
 from server.config.config import BUFFER_SIZE, START_FILE, CHUNK_SIZE, SAMPLE_RATE, N_CHANNELS
 
@@ -81,6 +81,8 @@ class MicrophoneThread(Thread):
             self.manager.putToSM(chunk)   # insert new chunk into shared memory
             self.manager.tGroundTruth += 1    # increment global timestamp variable
             self.manager.tGroundTruth = self.manager.tGroundTruth % BUFFER_SIZE # ring buffer implementation
+            with self.manager.condition:
+                self.manager.condition.notifyAll()
 
     def join(self, timeout=None):
         """Stops the thread.
@@ -160,6 +162,8 @@ class AudiofileThread(Thread):
             self.manager.tGroundTruth += 1    # increment global timestamp variable
             self.manager.tGroundTruth = self.manager.tGroundTruth % BUFFER_SIZE # ring buffer implementation
             chunk = self.wf.readframes(CHUNK_SIZE)
+            with self.manager.condition:
+                self.manager.condition.notifyAll()
 
         self.stream.stop_stream()
         self.stream.close()
@@ -233,7 +237,7 @@ class AudioTaggerManager:
     putToSM()
         adds a new audio chunk to the shared memory.
     """
-    def __init__(self, visualProvider, predProvider, predList, audiofileList):
+    def __init__(self, visualProvider, predProvider, predList, audiofileList, condition):
         """
         Parameters
         ----------
@@ -264,6 +268,8 @@ class AudioTaggerManager:
         self.sharedMemory = deque(maxlen=BUFFER_SIZE)
 
         self.tGroundTruth = 0   # global timestamp to keep up synchronization of consumers
+
+        self.condition = condition
 
         self.startThreads()
 

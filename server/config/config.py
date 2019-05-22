@@ -7,7 +7,7 @@ PROJECT_ROOT = '/home/alex/PycharmProjects/AudioTagger'
 
 # set the id of initial predictor and file
 START_PREDICTOR = 0
-START_FILE = None   # if None then microphone is used
+START_FILE = 1   # if None then microphone is used
 
 # audio signal producer settings
 CHUNK_SIZE = 1024

@@ -15,6 +15,7 @@ predictor or should use microphone input or audio file input.
 
 """
 
+import os
 import cv2
 import json
 import numpy as np
@@ -28,17 +29,21 @@ from server.audio_tagger_manager import AudioTaggerManager
 from server.config.load_config import loadPredictors, loadAudiofiles
 from server.config.config import START_PREDICTOR
 
+from threading import Condition
+
 ### load configs ###
 predictorList = loadPredictors()
 audiofileList = loadAudiofiles()
 
-visualisationProvider = MadmomSpectrogramProvider()
+condition = Condition()
+
+visualisationProvider = MadmomSpectrogramProvider(condition)
 
 # load prediction class via reflection
 predictionProviderClass = locate('server.consumer.predictors.{}'.format(predictorList[int(START_PREDICTOR)]['predictorClassPath']))
-predictionProvider = predictionProviderClass()
+predictionProvider = predictionProviderClass(condition)
 
-model = AudioTaggerManager(visualisationProvider, predictionProvider, predictorList, audiofileList)
+model = AudioTaggerManager(visualisationProvider, predictionProvider, predictorList, audiofileList, condition)
 
 ###### audio tagger REST API functions ######
 app = Flask(__name__)
